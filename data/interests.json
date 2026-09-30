@@ -1,0 +1,22 @@
+{
+  "interests": [
+    {"id": "ai_ml", "name": "Artificial Intelligence & ML", "category": "Technology"},
+    {"id": "web_dev", "name": "Web & Full-Stack Development", "category": "Technology"},
+    {"id": "algorithms", "name": "Data Structures & Algorithms", "category": "Computer Science"},
+    {"id": "cybersec", "name": "Cybersecurity & Cryptography", "category": "Technology"},
+    {"id": "cloud_comp", "name": "Cloud Computing & DevOps", "category": "Technology"},
+    {"id": "data_science", "name": "Data Science & Analytics", "category": "Computer Science"},
+    {"id": "competitive_prog", "name": "Competitive Programming", "category": "Computer Science"},
+    {"id": "game_dev", "name": "Game Development & 3D Graphics", "category": "Gaming"},
+    {"id": "blockchain", "name": "Web3 & Distributed Systems", "category": "Technology"},
+    {"id": "quantum_comp", "name": "Quantum Computing", "category": "Physics & Tech"},
+    {"id": "robotics", "name": "Robotics & Embedded Systems", "category": "Engineering"},
+    {"id": "photography", "name": "Photography & Visual Arts", "category": "Creative"},
+    {"id": "music_prod", "name": "Music Production & Audio Tech", "category": "Creative"},
+    {"id": "chess", "name": "Chess & Strategy Games", "category": "Gaming"},
+    {"id": "hiking", "name": "Hiking & Outdoor Adventures", "category": "Lifestyle"},
+    {"id": "fitness", "name": "Fitness & Weightlifting", "category": "Lifestyle"},
+    {"id": "astronomy", "name": "Astrophysics & Space Science", "category": "Science"},
+    {"id": "open_source", "name": "Open Source Contributing", "category": "Technology"}
+  ]
+}

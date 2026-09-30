@@ -1,0 +1,722 @@
+[
+  {
+    "createdAt": "2025-01-16",
+    "user1Id": 1,
+    "user2Id": 3,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-01-20",
+    "user1Id": 1,
+    "user2Id": 5,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-02-02",
+    "user1Id": 1,
+    "user2Id": 9,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-02-06",
+    "user1Id": 1,
+    "user2Id": 11,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-09",
+    "user1Id": 1,
+    "user2Id": 12,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-02",
+    "user1Id": 1,
+    "user2Id": 21,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-13",
+    "user1Id": 1,
+    "user2Id": 26,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-01-16",
+    "user1Id": 2,
+    "user2Id": 3,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-08",
+    "user1Id": 2,
+    "user2Id": 12,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-02-26",
+    "user1Id": 2,
+    "user2Id": 19,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-14",
+    "user1Id": 2,
+    "user2Id": 26,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-02",
+    "user1Id": 2,
+    "user2Id": 33,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-02",
+    "user1Id": 3,
+    "user2Id": 9,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-02-21",
+    "user1Id": 3,
+    "user2Id": 17,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-09",
+    "user1Id": 3,
+    "user2Id": 24,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-21",
+    "user1Id": 3,
+    "user2Id": 29,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-11",
+    "user1Id": 3,
+    "user2Id": 37,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-23",
+    "user1Id": 3,
+    "user2Id": 42,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-01-29",
+    "user1Id": 4,
+    "user2Id": 8,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-04",
+    "user1Id": 4,
+    "user2Id": 10,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-02-13",
+    "user1Id": 4,
+    "user2Id": 14,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-01",
+    "user1Id": 4,
+    "user2Id": 20,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-06",
+    "user1Id": 4,
+    "user2Id": 23,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-06",
+    "user1Id": 4,
+    "user2Id": 35,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-06",
+    "user1Id": 5,
+    "user2Id": 11,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-02-18",
+    "user1Id": 5,
+    "user2Id": 16,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-23",
+    "user1Id": 5,
+    "user2Id": 18,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-11",
+    "user1Id": 5,
+    "user2Id": 25,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-26",
+    "user1Id": 5,
+    "user2Id": 31,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-04",
+    "user1Id": 5,
+    "user2Id": 34,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-02-04",
+    "user1Id": 6,
+    "user2Id": 10,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-16",
+    "user1Id": 6,
+    "user2Id": 15,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-04",
+    "user1Id": 6,
+    "user2Id": 22,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-04",
+    "user1Id": 6,
+    "user2Id": 34,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-19",
+    "user1Id": 6,
+    "user2Id": 40,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-04-21",
+    "user1Id": 6,
+    "user2Id": 41,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-11",
+    "user1Id": 7,
+    "user2Id": 13,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-02-26",
+    "user1Id": 7,
+    "user2Id": 19,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-29",
+    "user1Id": 7,
+    "user2Id": 32,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-09",
+    "user1Id": 7,
+    "user2Id": 36,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-02-18",
+    "user1Id": 8,
+    "user2Id": 16,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-01",
+    "user1Id": 8,
+    "user2Id": 20,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-16",
+    "user1Id": 8,
+    "user2Id": 27,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-26",
+    "user1Id": 8,
+    "user2Id": 31,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-02-21",
+    "user1Id": 9,
+    "user2Id": 17,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-02",
+    "user1Id": 9,
+    "user2Id": 21,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-21",
+    "user1Id": 9,
+    "user2Id": 29,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-11",
+    "user1Id": 9,
+    "user2Id": 37,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-23",
+    "user1Id": 9,
+    "user2Id": 42,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-09",
+    "user1Id": 10,
+    "user2Id": 24,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-23",
+    "user1Id": 10,
+    "user2Id": 30,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-16",
+    "user1Id": 10,
+    "user2Id": 39,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-02-18",
+    "user1Id": 11,
+    "user2Id": 16,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-02",
+    "user1Id": 11,
+    "user2Id": 21,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-16",
+    "user1Id": 11,
+    "user2Id": 27,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-26",
+    "user1Id": 11,
+    "user2Id": 31,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-02-26",
+    "user1Id": 12,
+    "user2Id": 19,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-13",
+    "user1Id": 12,
+    "user2Id": 26,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-02",
+    "user1Id": 12,
+    "user2Id": 33,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-06",
+    "user1Id": 12,
+    "user2Id": 35,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-29",
+    "user1Id": 13,
+    "user2Id": 32,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-09",
+    "user1Id": 13,
+    "user2Id": 36,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-23",
+    "user1Id": 13,
+    "user2Id": 42,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-06",
+    "user1Id": 14,
+    "user2Id": 23,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-06",
+    "user1Id": 14,
+    "user2Id": 35,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-04",
+    "user1Id": 15,
+    "user2Id": 22,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-11",
+    "user1Id": 15,
+    "user2Id": 25,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-19",
+    "user1Id": 15,
+    "user2Id": 40,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-01",
+    "user1Id": 16,
+    "user2Id": 20,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-16",
+    "user1Id": 16,
+    "user2Id": 27,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-26",
+    "user1Id": 16,
+    "user2Id": 31,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-21",
+    "user1Id": 17,
+    "user2Id": 29,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-11",
+    "user1Id": 17,
+    "user2Id": 37,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-23",
+    "user1Id": 17,
+    "user2Id": 42,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-11",
+    "user1Id": 18,
+    "user2Id": 25,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-19",
+    "user1Id": 18,
+    "user2Id": 28,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-29",
+    "user1Id": 18,
+    "user2Id": 32,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-13",
+    "user1Id": 18,
+    "user2Id": 38,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-13",
+    "user1Id": 19,
+    "user2Id": 26,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-02",
+    "user1Id": 19,
+    "user2Id": 33,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-21",
+    "user1Id": 19,
+    "user2Id": 41,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-16",
+    "user1Id": 20,
+    "user2Id": 27,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-26",
+    "user1Id": 20,
+    "user2Id": 31,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-03-16",
+    "user1Id": 21,
+    "user2Id": 27,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-21",
+    "user1Id": 21,
+    "user2Id": 29,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-23",
+    "user1Id": 21,
+    "user2Id": 42,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-04",
+    "user1Id": 22,
+    "user2Id": 34,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-19",
+    "user1Id": 22,
+    "user2Id": 40,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-21",
+    "user1Id": 22,
+    "user2Id": 41,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-06",
+    "user1Id": 23,
+    "user2Id": 35,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-03-23",
+    "user1Id": 24,
+    "user2Id": 30,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-11",
+    "user1Id": 24,
+    "user2Id": 37,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-16",
+    "user1Id": 24,
+    "user2Id": 39,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-04",
+    "user1Id": 25,
+    "user2Id": 34,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-19",
+    "user1Id": 25,
+    "user2Id": 40,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-02",
+    "user1Id": 26,
+    "user2Id": 33,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-06",
+    "user1Id": 26,
+    "user2Id": 35,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-03-26",
+    "user1Id": 27,
+    "user2Id": 31,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-13",
+    "user1Id": 28,
+    "user2Id": 38,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-11",
+    "user1Id": 29,
+    "user2Id": 37,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-23",
+    "user1Id": 29,
+    "user2Id": 42,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-16",
+    "user1Id": 30,
+    "user2Id": 39,
+    "weight": 5.0
+  },
+  {
+    "createdAt": "2025-04-09",
+    "user1Id": 32,
+    "user2Id": 36,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-13",
+    "user1Id": 32,
+    "user2Id": 38,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-04-19",
+    "user1Id": 34,
+    "user2Id": 40,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-21",
+    "user1Id": 34,
+    "user2Id": 41,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-23",
+    "user1Id": 36,
+    "user2Id": 42,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "2025-04-23",
+    "user1Id": 37,
+    "user2Id": 42,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "2025-04-21",
+    "user1Id": 40,
+    "user2Id": 41,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 29,
+    "weight": 3.5
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 24,
+    "weight": 3.5
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 35,
+    "weight": 3.5
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 42,
+    "weight": 3.5
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 37,
+    "weight": 3.5
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 30,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 31,
+    "weight": 4.0
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 2,
+    "weight": 3.5
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 19,
+    "weight": 3.5
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 4,
+    "weight": 3.0
+  },
+  {
+    "createdAt": "",
+    "user1Id": 1,
+    "user2Id": 6,
+    "weight": 3.0
+  }
+]

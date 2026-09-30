@@ -1,0 +1,176 @@
+[
+  {
+    "authorId": 1,
+    "comments": [
+      {
+        "authorId": 2,
+        "content": "Indexed min-heaps are legendary for decrease-key operations! Well done Khushi!",
+        "createdAt": "1 hour ago",
+        "id": 1
+      },
+      {
+        "authorId": 21,
+        "content": "Would love to see how this scales with 1M node property graphs.",
+        "createdAt": "45 mins ago",
+        "id": 2
+      }
+    ],
+    "computedScore": 0.0,
+    "content": "Just optimized our Social Graph path discovery engine using indexed binary heaps! Path traversal latency dropped by 64%. Clean data-oriented C++ design pays off! 🚀⚡ Here is a snapshot of the sub-millisecond execution benchmark.",
+    "createdAt": "2 hours ago",
+    "id": 101,
+    "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80",
+    "likedByUserIds": [],
+    "likes": 42,
+    "postType": "photo",
+    "tags": [
+      "algorithms",
+      "web_dev"
+    ]
+  },
+  {
+    "authorId": 2,
+    "comments": [
+      {
+        "authorId": 12,
+        "content": "Solved it with centroid decomposition! Such a neat problem.",
+        "createdAt": "3 hours ago",
+        "id": 3
+      }
+    ],
+    "computedScore": 0.0,
+    "content": "Finished today's Codeforces Div 1 round! The problem involving Heavy-Light Decomposition combined with persistent segment trees was purely exquisite. Anyone else solve D?",
+    "createdAt": "4 hours ago",
+    "id": 102,
+    "imageUrl": "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=800&auto=format&fit=crop&q=80",
+    "likedByUserIds": [],
+    "likes": 38,
+    "postType": "standard",
+    "tags": [
+      "competitive_prog",
+      "algorithms"
+    ]
+  },
+  {
+    "authorId": 3,
+    "comments": [
+      {
+        "authorId": 9,
+        "content": "Completely agree, especially when Jaccard coefficients are used as edge feature weights.",
+        "createdAt": "5 hours ago",
+        "id": 4
+      }
+    ],
+    "computedScore": 0.0,
+    "content": "Graph Neural Networks (GNNs) for friend recommendation: comparing spectral graph convolutions with spatial neighborhood aggregators. Spatial methods generalize much better on dynamic subgraphs! 🧠📊",
+    "createdAt": "6 hours ago",
+    "id": 103,
+    "imageUrl": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&auto=format&fit=crop&q=80",
+    "likedByUserIds": [],
+    "likes": 56,
+    "postType": "photo",
+    "tags": [
+      "ai_ml",
+      "data_science"
+    ]
+  },
+  {
+    "authorId": 4,
+    "comments": [
+      {
+        "authorId": 14,
+        "content": "ZK-SNARKs on social graphs are the future of private social networking.",
+        "createdAt": "7 hours ago",
+        "id": 5
+      }
+    ],
+    "computedScore": 0.0,
+    "content": "Zero-Knowledge proofs are revolutionizing decentralized identity. Proving you belong to a verified friend circle without disclosing who your friends are! 🔐🛡️",
+    "createdAt": "8 hours ago",
+    "id": 104,
+    "imageUrl": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
+    "likedByUserIds": [],
+    "likes": 31,
+    "postType": "photo",
+    "tags": [
+      "cybersec",
+      "blockchain"
+    ]
+  },
+  {
+    "authorId": 5,
+    "comments": [
+      {
+        "authorId": 1,
+        "content": "Cyber Glow looks absolutely stunning!",
+        "createdAt": "11 hours ago",
+        "id": 6
+      },
+      {
+        "authorId": 25,
+        "content": "The color grading and node repulsion dynamics feel buttery smooth!",
+        "createdAt": "10 hours ago",
+        "id": 7
+      }
+    ],
+    "computedScore": 0.0,
+    "content": "Crafting the new reactive Canvas design system for FriendSphere. Real-time node pinning, particle flow along edges, and crisp high-DPI rendering. What visual theme do you prefer: Cyber Glow or Midnight Obsidian? ✨🎨",
+    "createdAt": "12 hours ago",
+    "id": 105,
+    "imageUrl": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
+    "likedByUserIds": [],
+    "likes": 49,
+    "postType": "photo",
+    "tags": [
+      "web_dev",
+      "photography"
+    ]
+  },
+  {
+    "authorId": 6,
+    "comments": [
+      {
+        "authorId": 22,
+        "content": "BVH tree re-fitting during dynamic physics updates is always tricky. Great work!",
+        "createdAt": "13 hours ago",
+        "id": 8
+      }
+    ],
+    "computedScore": 0.0,
+    "content": "Writing a custom Vulkan ray tracing pipeline for dynamic voxel terrains. Bounding Volume Hierarchies (BVH) built with Surface Area Heuristic (SAH) giving us 120 FPS at 4K! 🎮👾",
+    "createdAt": "14 hours ago",
+    "id": 106,
+    "imageUrl": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80",
+    "likedByUserIds": [],
+    "likes": 44,
+    "postType": "photo",
+    "tags": [
+      "game_dev",
+      "algorithms"
+    ]
+  },
+  {
+    "authorId": 18,
+    "comments": [
+      {
+        "authorId": 38,
+        "content": "Breathtaking! We should do the Pacific Crest Trail next month!",
+        "createdAt": "1 day ago",
+        "id": 11
+      }
+    ],
+    "computedScore": 0.0,
+    "content": "Hiked up to 4,200m at dawn to capture the alpine sunrise. The clarity of mountain air reminds me of clean, decoupled software architectures. 🏔️📷",
+    "createdAt": "1 day ago",
+    "id": 107,
+    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80",
+    "likedByUserIds": [],
+    "likes": 58,
+    "postType": "photo",
+    "tags": [
+      "photography",
+      "hiking",
+      "fitness"
+    ]
+  }
+]

@@ -1,0 +1,1094 @@
+[
+  {
+    "activityScore": 95.0,
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80",
+    "bio": "Building high-performance graph algorithms and social computing engines. Passionate about graph theory, distributed systems, and modern C++.",
+    "college": "Indian Institute of Science (IISc)",
+    "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+    "email": "khushi@friendsphere.dev",
+    "headline": "Full-Stack Architect & AI Researcher",
+    "id": 1,
+    "interests": [
+      "algorithms",
+      "web_dev",
+      "ai_ml",
+      "open_source",
+      "competitive_prog"
+    ],
+    "joinedDate": "January 2025",
+    "location": "Bengaluru, India",
+    "name": "Khushi Sharma",
+    "skills": [
+      "C++20",
+      "React",
+      "Graph Theory",
+      "Distributed Systems"
+    ],
+    "username": "khushi_s"
+  },
+  {
+    "activityScore": 92.0,
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&auto=format&fit=crop&q=80",
+    "bio": "Grandmaster on Codeforces. Always down to solve graph optimization and network flow puzzles.",
+    "college": "IIT Hyderabad",
+    "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80",
+    "email": "aravind@friendsphere.dev",
+    "headline": "Algorithm Researcher & ICPC Finalist",
+    "id": 2,
+    "interests": [
+      "algorithms",
+      "competitive_prog",
+      "chess",
+      "ai_ml"
+    ],
+    "joinedDate": "January 2025",
+    "location": "Hyderabad, India",
+    "name": "Aravind Kumar",
+    "skills": [
+      "C++",
+      "Dynamic Programming",
+      "Flow Networks",
+      "Segment Trees"
+    ],
+    "username": "aravind_k"
+  },
+  {
+    "activityScore": 88.0,
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80",
+    "bio": "Exploring transformer architectures, graph neural networks, and high-dimensional clustering systems.",
+    "college": "Stanford University",
+    "coverImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1200&auto=format&fit=crop&q=80",
+    "email": "sophia@friendsphere.dev",
+    "headline": "AI/ML Engineer @ DeepVision Labs",
+    "id": 3,
+    "interests": [
+      "ai_ml",
+      "data_science",
+      "algorithms",
+      "astronomy"
+    ],
+    "joinedDate": "January 2025",
+    "location": "San Francisco, CA",
+    "name": "Sophia Chen",
+    "skills": [
+      "PyTorch",
+      "GNNs",
+      "C++",
+      "Vector Embeddings"
+    ],
+    "username": "sophia_chen"
+  },
+  {
+    "activityScore": 82.0,
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80",
+    "bio": "Low-level Linux kernel hacking, memory safety architectures, and zero-knowledge cryptographic protocols.",
+    "college": "Technical University of Munich",
+    "coverImage": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80",
+    "email": "marcus@friendsphere.dev",
+    "headline": "Systems & Cybersecurity Researcher",
+    "id": 4,
+    "interests": [
+      "cybersec",
+      "blockchain",
+      "cloud_comp",
+      "robotics"
+    ],
+    "joinedDate": "January 2025",
+    "location": "Berlin, Germany",
+    "name": "Marcus Vance",
+    "skills": [
+      "Rust",
+      "C++",
+      "Zero Knowledge Proofs",
+      "Network Security"
+    ],
+    "username": "marcus_v"
+  },
+  {
+    "activityScore": 90.0,
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&q=80",
+    "bio": "Crafting fluid reactive interfaces, interactive canvas graphs, and accessible design systems.",
+    "college": "IIT Bombay",
+    "coverImage": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&auto=format&fit=crop&q=80",
+    "email": "priya@friendsphere.dev",
+    "headline": "Frontend Architect & Creative Designer",
+    "id": 5,
+    "interests": [
+      "web_dev",
+      "photography",
+      "open_source",
+      "fitness"
+    ],
+    "joinedDate": "January 2025",
+    "location": "Mumbai, India",
+    "name": "Priya Patel",
+    "skills": [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "D3.js"
+    ],
+    "username": "priya_patel"
+  },
+  {
+    "activityScore": 79.0,
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80",
+    "bio": "Vulkan, DirectX 12, real-time ray tracing, and spatial partitioning algorithms (BVH, Octrees).",
+    "college": "University of São Paulo",
+    "coverImage": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&auto=format&fit=crop&q=80",
+    "email": "lucas@friendsphere.dev",
+    "headline": "Game Engine Developer & Graphics Geek",
+    "id": 6,
+    "interests": [
+      "game_dev",
+      "algorithms",
+      "robotics",
+      "music_prod"
+    ],
+    "joinedDate": "January 2025",
+    "location": "São Paulo, Brazil",
+    "name": "Lucas Silva",
+    "skills": [
+      "C++",
+      "GLSL",
+      "Vulkan",
+      "Physics Simulation"
+    ],
+    "username": "lucas_silva"
+  },
+  {
+    "activityScore": 84.0,
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80",
+    "bio": "Quantum gate optimization, tensor networks, and quantum error correction circuits.",
+    "college": "ETH Zurich",
+    "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80",
+    "email": "elena@friendsphere.dev",
+    "headline": "Quantum Computing & Applied Physics Researcher",
+    "id": 7,
+    "interests": [
+      "quantum_comp",
+      "algorithms",
+      "astronomy",
+      "chess"
+    ],
+    "joinedDate": "January 2025",
+    "location": "Zurich, Switzerland",
+    "name": "Elena Rostova",
+    "skills": [
+      "Qiskit",
+      "C++",
+      "Linear Algebra",
+      "Scientific Computing"
+    ],
+    "username": "elena_rostova"
+  },
+  {
+    "activityScore": 76.0,
+    "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=80",
+    "bio": "Kubernetes clusters, distributed consensus (Raft/Paxos), and high-throughput microservices.",
+    "college": "KAIST",
+    "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "email": "david@friendsphere.dev",
+    "headline": "DevOps & Cloud Infrastructure Engineer",
+    "id": 8,
+    "interests": [
+      "cloud_comp",
+      "cybersec",
+      "web_dev",
+      "hiking"
+    ],
+    "joinedDate": "January 2025",
+    "location": "Seoul, South Korea",
+    "name": "David Kim",
+    "skills": [
+      "Go",
+      "Kubernetes",
+      "AWS",
+      "Terraform"
+    ],
+    "username": "david_kim"
+  },
+  {
+    "activityScore": 91.0,
+    "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&auto=format&fit=crop&q=80",
+    "bio": "Social network dynamics, community detection algorithms, and graph spectral clustering.",
+    "college": "IIT Madras",
+    "coverImage": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop&q=80",
+    "email": "ananya@friendsphere.dev",
+    "headline": "Data Scientist & Network Analyst",
+    "id": 9,
+    "interests": [
+      "data_science",
+      "ai_ml",
+      "algorithms",
+      "music_prod"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Chennai, India",
+    "name": "Ananya Iyer",
+    "skills": [
+      "Python",
+      "NetworkX",
+      "Graph ML",
+      "Statistics"
+    ],
+    "username": "ananya_iyer"
+  },
+  {
+    "activityScore": 81.0,
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&auto=format&fit=crop&q=80",
+    "bio": "Autonomous navigation, SLAM, Kalman filters, and hardware-accelerated computer vision.",
+    "college": "UT Austin",
+    "coverImage": "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=1200&auto=format&fit=crop&q=80",
+    "email": "leo@friendsphere.dev",
+    "headline": "Robotics & Embedded Systems Specialist",
+    "id": 10,
+    "interests": [
+      "robotics",
+      "ai_ml",
+      "game_dev",
+      "hiking"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Austin, TX",
+    "name": "Leo Martinez",
+    "skills": [
+      "C++",
+      "ROS2",
+      "OpenCV",
+      "Embedded C"
+    ],
+    "username": "leo_martinez"
+  },
+  {
+    "activityScore": 89.0,
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80",
+    "bio": "Open source maintainer. Building responsive full-stack applications with C++ backend microservices.",
+    "college": "Imperial College London",
+    "coverImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80",
+    "email": "zara@friendsphere.dev",
+    "headline": "Full-Stack Web & Open Source Advocate",
+    "id": 11,
+    "interests": [
+      "web_dev",
+      "open_source",
+      "algorithms",
+      "photography"
+    ],
+    "joinedDate": "February 2025",
+    "location": "London, UK",
+    "name": "Zara Ahmed",
+    "skills": [
+      "React",
+      "Node.js",
+      "C++",
+      "PostgreSQL"
+    ],
+    "username": "zara_ahmed"
+  },
+  {
+    "activityScore": 94.0,
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80",
+    "bio": "Number theory, graph connectivity, Dijkstra optimizations, and shortest path tree analyses.",
+    "college": "IIT Delhi",
+    "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80",
+    "email": "vikram@friendsphere.dev",
+    "headline": "Competitive Programmer & Math Olympiad Mentor",
+    "id": 12,
+    "interests": [
+      "competitive_prog",
+      "algorithms",
+      "chess",
+      "data_science"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Delhi, India",
+    "name": "Vikram Singh",
+    "skills": [
+      "C++",
+      "Graph Algorithms",
+      "Combinatorics",
+      "Geometry"
+    ],
+    "username": "vikram_singh"
+  },
+  {
+    "activityScore": 77.0,
+    "avatar": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=200&auto=format&fit=crop&q=80",
+    "bio": "Simulating galaxy formation with N-body simulations and high performance computing.",
+    "college": "University of Toronto",
+    "coverImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1200&auto=format&fit=crop&q=80",
+    "email": "olivia@friendsphere.dev",
+    "headline": "Astrophysicist & Scientific Computing Dev",
+    "id": 13,
+    "interests": [
+      "astronomy",
+      "quantum_comp",
+      "algorithms",
+      "hiking"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Toronto, Canada",
+    "name": "Olivia Taylor",
+    "skills": [
+      "C++",
+      "MPI",
+      "CUDA",
+      "Astropy"
+    ],
+    "username": "olivia_taylor"
+  },
+  {
+    "activityScore": 85.0,
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80",
+    "bio": "Consensus mechanisms, Byzantine Fault Tolerance, and verifiable random functions.",
+    "college": "Khalifa University",
+    "coverImage": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80",
+    "email": "tariq@friendsphere.dev",
+    "headline": "Cryptographer & Distributed Ledger Engineer",
+    "id": 14,
+    "interests": [
+      "blockchain",
+      "cybersec",
+      "algorithms",
+      "fitness"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Dubai, UAE",
+    "name": "Tariq Mansour",
+    "skills": [
+      "Rust",
+      "Solidity",
+      "Cryptography",
+      "C++"
+    ],
+    "username": "tariq_mansour"
+  },
+  {
+    "activityScore": 80.0,
+    "avatar": "https://images.unsplash.com/photo-1548142813-c348350df52b?w=200&auto=format&fit=crop&q=80",
+    "bio": "FFT audio synthesis, algorithmic composition, VST development, and sound design.",
+    "college": "KTH Royal Institute of Technology",
+    "coverImage": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&auto=format&fit=crop&q=80",
+    "email": "emily@friendsphere.dev",
+    "headline": "Music Producer & Audio DSP Engineer",
+    "id": 15,
+    "interests": [
+      "music_prod",
+      "game_dev",
+      "open_source",
+      "photography"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Stockholm, Sweden",
+    "name": "Emily Watson",
+    "skills": [
+      "C++",
+      "JUCE",
+      "DSP",
+      "Max/MSP"
+    ],
+    "username": "emily_watson"
+  },
+  {
+    "activityScore": 86.0,
+    "avatar": "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?w=200&auto=format&fit=crop&q=80",
+    "bio": "WebSockets, high concurrency event queues, and reactive state management.",
+    "college": "COEP Pune",
+    "coverImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80",
+    "email": "rohan@friendsphere.dev",
+    "headline": "Full-Stack Engineer | Real-Time Systems",
+    "id": 16,
+    "interests": [
+      "web_dev",
+      "algorithms",
+      "cloud_comp",
+      "fitness"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Pune, India",
+    "name": "Rohan Verma",
+    "skills": [
+      "React",
+      "C++",
+      "Redis",
+      "Kafka"
+    ],
+    "username": "rohan_verma"
+  },
+  {
+    "activityScore": 83.0,
+    "avatar": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200&auto=format&fit=crop&q=80",
+    "bio": "Large language models, semantic representation, and recommendation system fairness.",
+    "college": "Sorbonne University",
+    "coverImage": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop&q=80",
+    "email": "chloe@friendsphere.dev",
+    "headline": "AI Ethics & NLP Researcher",
+    "id": 17,
+    "interests": [
+      "ai_ml",
+      "data_science",
+      "open_source",
+      "chess"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Paris, France",
+    "name": "Chloé Dubois",
+    "skills": [
+      "Python",
+      "Transformers",
+      "NLP",
+      "PyTorch"
+    ],
+    "username": "chloe_dubois"
+  },
+  {
+    "activityScore": 78.0,
+    "avatar": "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=200&auto=format&fit=crop&q=80",
+    "bio": "Capturing mountains by day, optimizing geospatial image processing pipelines by night.",
+    "college": "University of Colorado Boulder",
+    "coverImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "email": "alex@friendsphere.dev",
+    "headline": "Outdoor Photographer & Travel Tech Creator",
+    "id": 18,
+    "interests": [
+      "photography",
+      "hiking",
+      "fitness",
+      "open_source"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Denver, CO",
+    "name": "Alex Novak",
+    "skills": [
+      "Photoshop",
+      "Lightroom",
+      "Python",
+      "GIS"
+    ],
+    "username": "alex_novak"
+  },
+  {
+    "activityScore": 93.0,
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&q=80",
+    "bio": "Alpha-beta minimax engines, Bitboard representation, and Monte Carlo Tree Search.",
+    "college": "National University of Singapore (NUS)",
+    "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80",
+    "email": "maya@friendsphere.dev",
+    "headline": "Chess Grandmaster Candidate & Heuristic Game AI Dev",
+    "id": 19,
+    "interests": [
+      "chess",
+      "algorithms",
+      "ai_ml",
+      "competitive_prog"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Singapore",
+    "name": "Maya Lin",
+    "skills": [
+      "C++",
+      "MCTS",
+      "Minimax",
+      "Python"
+    ],
+    "username": "maya_lin"
+  },
+  {
+    "activityScore": 87.0,
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80",
+    "bio": "Multi-region failover, distributed cache coherence, and auto-scaling telemetry.",
+    "college": "University of Lagos",
+    "coverImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80",
+    "email": "samuel@friendsphere.dev",
+    "headline": "Cloud Architect & SRE Lead",
+    "id": 20,
+    "interests": [
+      "cloud_comp",
+      "cybersec",
+      "open_source",
+      "fitness"
+    ],
+    "joinedDate": "February 2025",
+    "location": "Lagos, Nigeria",
+    "name": "Samuel Okafor",
+    "skills": [
+      "Go",
+      "Kubernetes",
+      "Prometheus",
+      "GCP"
+    ],
+    "username": "samuel_okafor"
+  },
+  {
+    "activityScore": 92.0,
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80",
+    "bio": "Query optimization on large scale property graphs and SPARQL engines.",
+    "college": "IIIT Bangalore",
+    "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+    "email": "tanvi@friendsphere.dev",
+    "headline": "Graph Database & Knowledge Graph Engineer",
+    "id": 21,
+    "interests": [
+      "algorithms",
+      "data_science",
+      "web_dev",
+      "open_source"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Bengaluru, India",
+    "name": "Tanvi Joshi",
+    "skills": [
+      "Neo4j",
+      "C++",
+      "Cypher",
+      "RDF"
+    ],
+    "username": "tanvi_joshi"
+  },
+  {
+    "activityScore": 80.0,
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80",
+    "bio": "Perlin noise, cellular automata terrain synthesis, and behavior trees for NPC agents.",
+    "college": "University of Oslo",
+    "coverImage": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&auto=format&fit=crop&q=80",
+    "email": "johan@friendsphere.dev",
+    "headline": "Game AI & Procedural Generation Programmer",
+    "id": 22,
+    "interests": [
+      "game_dev",
+      "algorithms",
+      "music_prod",
+      "hiking"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Oslo, Norway",
+    "name": "Johan Berg",
+    "skills": [
+      "C++",
+      "Unreal Engine 5",
+      "HLSL",
+      "AI NavMesh"
+    ],
+    "username": "johan_berg"
+  },
+  {
+    "activityScore": 85.0,
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80",
+    "bio": "Reverse engineering, ROP chains, Ghidra plugins, and threat intelligence modeling.",
+    "college": "Charles University",
+    "coverImage": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80",
+    "email": "nina@friendsphere.dev",
+    "headline": "Penetration Tester & Binary Exploitation Researcher",
+    "id": 23,
+    "interests": [
+      "cybersec",
+      "blockchain",
+      "algorithms",
+      "chess"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Prague, Czech Republic",
+    "name": "Nina Kovac",
+    "skills": [
+      "Ghidra",
+      "x86/x64 Assembly",
+      "C",
+      "Python"
+    ],
+    "username": "nina_kovac"
+  },
+  {
+    "activityScore": 87.0,
+    "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&auto=format&fit=crop&q=80",
+    "bio": "Semantic segmentation, diffusion models, and real-time edge inference on embedded accelerators.",
+    "college": "IIT Roorkee",
+    "coverImage": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop&q=80",
+    "email": "rahul@friendsphere.dev",
+    "headline": "Deep Learning Vision Researcher",
+    "id": 24,
+    "interests": [
+      "ai_ml",
+      "robotics",
+      "data_science",
+      "photography"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Ahmedabad, India",
+    "name": "Rahul Mehta",
+    "skills": [
+      "PyTorch",
+      "ONNX",
+      "TensorRT",
+      "C++"
+    ],
+    "username": "rahul_mehta"
+  },
+  {
+    "activityScore": 75.0,
+    "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format&fit=crop&q=80",
+    "bio": "Generative art with GLSL shaders, p5.js, and interactive museum installations.",
+    "college": "Politecnico di Milano",
+    "coverImage": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&auto=format&fit=crop&q=80",
+    "email": "isabella@friendsphere.dev",
+    "headline": "Visual Artist & Creative Coder",
+    "id": 25,
+    "interests": [
+      "photography",
+      "music_prod",
+      "web_dev",
+      "open_source"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Florence, Italy",
+    "name": "Isabella Rossi",
+    "skills": [
+      "GLSL",
+      "Three.js",
+      "Creative Coding",
+      "Figma"
+    ],
+    "username": "isabella_rossi"
+  },
+  {
+    "activityScore": 96.0,
+    "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=200&auto=format&fit=crop&q=80",
+    "bio": "Kernel bypass (DPDK/Solarflare), lock-free data structures, and nanosecond order matching.",
+    "college": "BITS Pilani",
+    "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80",
+    "email": "karthik@friendsphere.dev",
+    "headline": "High-Frequency Trading & Low Latency Systems",
+    "id": 26,
+    "interests": [
+      "algorithms",
+      "competitive_prog",
+      "cloud_comp",
+      "chess"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Bengaluru, India",
+    "name": "Karthik Nair",
+    "skills": [
+      "C++20",
+      "Lock-free Queues",
+      "SIMD",
+      "Linux Tuning"
+    ],
+    "username": "karthik_n"
+  },
+  {
+    "activityScore": 88.0,
+    "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&auto=format&fit=crop&q=80",
+    "bio": "LSM-Trees, B+ Trees, WAL serialization, and ACID transaction scheduling.",
+    "college": "LMU Munich",
+    "coverImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80",
+    "email": "hannah@friendsphere.dev",
+    "headline": "Distributed Databases & Storage Specialist",
+    "id": 27,
+    "interests": [
+      "cloud_comp",
+      "algorithms",
+      "open_source",
+      "hiking"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Munich, Germany",
+    "name": "Hannah Schmidt",
+    "skills": [
+      "C++",
+      "RocksDB",
+      "Raft",
+      "Distributed Systems"
+    ],
+    "username": "hannah_schmidt"
+  },
+  {
+    "activityScore": 79.0,
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&auto=format&fit=crop&q=80",
+    "bio": "Building wearable health trackers and physiological time-series analytics.",
+    "college": "Complutense University of Madrid",
+    "coverImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "email": "mateo@friendsphere.dev",
+    "headline": "Fitness Tech Founder & Endurance Athlete",
+    "id": 28,
+    "interests": [
+      "fitness",
+      "hiking",
+      "robotics",
+      "data_science"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Madrid, Spain",
+    "name": "Mateo Fernandez",
+    "skills": [
+      "Embedded C",
+      "Signal Processing",
+      "Flutter",
+      "BLE"
+    ],
+    "username": "mateo_fernandez"
+  },
+  {
+    "activityScore": 93.0,
+    "avatar": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&auto=format&fit=crop&q=80",
+    "bio": "Collaborative filtering, matrix factorization, and real-time graph ranking algorithms.",
+    "college": "IIIT Hyderabad",
+    "coverImage": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+    "email": "sneha@friendsphere.dev",
+    "headline": "Recommendation Systems Engineer",
+    "id": 29,
+    "interests": [
+      "algorithms",
+      "ai_ml",
+      "data_science",
+      "web_dev"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Hyderabad, India",
+    "name": "Sneha Reddy",
+    "skills": [
+      "C++",
+      "Python",
+      "Recommenders",
+      "Jaccard/Cosine"
+    ],
+    "username": "sneha_reddy"
+  },
+  {
+    "activityScore": 81.0,
+    "avatar": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&auto=format&fit=crop&q=80",
+    "bio": "STM32, FreeRTOS, PID motor control, and swarm robotics communication protocols.",
+    "college": "Polytechnic University of Bucharest",
+    "coverImage": "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=1200&auto=format&fit=crop&q=80",
+    "email": "lucian@friendsphere.dev",
+    "headline": "Microcontroller Firmware & Robotics Hacker",
+    "id": 30,
+    "interests": [
+      "robotics",
+      "cybersec",
+      "algorithms",
+      "astronomy"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Bucharest, Romania",
+    "name": "Lucian Dragan",
+    "skills": [
+      "C/C++",
+      "FreeRTOS",
+      "CAN Bus",
+      "Control Theory"
+    ],
+    "username": "lucian_dragan"
+  },
+  {
+    "activityScore": 84.0,
+    "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80",
+    "bio": "GraphQL federation, React server components, and C++ WebAssembly modules.",
+    "college": "NED University",
+    "coverImage": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80",
+    "email": "aisha@friendsphere.dev",
+    "headline": "Full-Stack & Cloud Native Developer",
+    "id": 31,
+    "interests": [
+      "web_dev",
+      "cloud_comp",
+      "open_source",
+      "photography"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Karachi, Pakistan",
+    "name": "Aisha Khan",
+    "skills": [
+      "React",
+      "TypeScript",
+      "Wasm",
+      "Docker"
+    ],
+    "username": "aisha_khan"
+  },
+  {
+    "activityScore": 82.0,
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80",
+    "bio": "Deep sky imaging, telescope auto-guiding software, and celestial mechanics simulations.",
+    "college": "University of Tokyo",
+    "coverImage": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1200&auto=format&fit=crop&q=80",
+    "email": "kenji@friendsphere.dev",
+    "headline": "Astrophotographer & Space Optics Engineer",
+    "id": 32,
+    "interests": [
+      "astronomy",
+      "photography",
+      "hiking",
+      "quantum_comp"
+    ],
+    "joinedDate": "March 2025",
+    "location": "Tokyo, Japan",
+    "name": "Kenji Sato",
+    "skills": [
+      "Python",
+      "OpenCV",
+      "Optics Design",
+      "C++"
+    ],
+    "username": "kenji_sato"
+  },
+  {
+    "activityScore": 90.0,
+    "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80",
+    "bio": "Aho-Corasick, Suffix Automaton, KMP string matching, and prefix search trees.",
+    "college": "MNIT Jaipur",
+    "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80",
+    "email": "deepak@friendsphere.dev",
+    "headline": "Competitive Programmer & Trie/Automata Geek",
+    "id": 33,
+    "interests": [
+      "algorithms",
+      "competitive_prog",
+      "chess",
+      "open_source"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Jaipur, India",
+    "name": "Deepak Sharma",
+    "skills": [
+      "C++",
+      "Trie Data Structures",
+      "String Algorithms"
+    ],
+    "username": "deepak_sharma"
+  },
+  {
+    "activityScore": 83.0,
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80",
+    "bio": "WebGL, WebGPU, shader art, and real-time social interactive spaces.",
+    "college": "UCLA",
+    "coverImage": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&auto=format&fit=crop&q=80",
+    "email": "zoe@friendsphere.dev",
+    "headline": "Interactive Web & 3D Spatial Experiences",
+    "id": 34,
+    "interests": [
+      "web_dev",
+      "game_dev",
+      "music_prod",
+      "photography"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Los Angeles, CA",
+    "name": "Zoe Kravitz",
+    "skills": [
+      "Three.js",
+      "WebGPU",
+      "React",
+      "Blender"
+    ],
+    "username": "zoe_kravitz"
+  },
+  {
+    "activityScore": 86.0,
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80",
+    "bio": "Smart contract vulnerability discovery, EVM internals, and formal verification.",
+    "college": "Jadavpur University",
+    "coverImage": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&auto=format&fit=crop&q=80",
+    "email": "aditya@friendsphere.dev",
+    "headline": "Security Researcher & Blockchain Auditor",
+    "id": 35,
+    "interests": [
+      "blockchain",
+      "cybersec",
+      "algorithms",
+      "competitive_prog"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Kolkata, India",
+    "name": "Aditya Gupta",
+    "skills": [
+      "Solidity",
+      "Rust",
+      "Formal Verification",
+      "C++"
+    ],
+    "username": "aditya_gupta"
+  },
+  {
+    "activityScore": 80.0,
+    "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80",
+    "bio": "Shor's algorithm, Grover search, and quantum Hamiltonian simulation.",
+    "college": "École Normale Supérieure de Lyon",
+    "coverImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&auto=format&fit=crop&q=80",
+    "email": "clara@friendsphere.dev",
+    "headline": "Quantum Algorithmist & Complexity Theorist",
+    "id": 36,
+    "interests": [
+      "quantum_comp",
+      "algorithms",
+      "astronomy",
+      "chess"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Lyon, France",
+    "name": "Clara Moreau",
+    "skills": [
+      "Quantum Circuits",
+      "Python",
+      "C++",
+      "Complexity Theory"
+    ],
+    "username": "clara_moreau"
+  },
+  {
+    "activityScore": 89.0,
+    "avatar": "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?w=200&auto=format&fit=crop&q=80",
+    "bio": "Unsupervised feature clustering, embedding representations, and dimensionality reduction.",
+    "college": "PES University",
+    "coverImage": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop&q=80",
+    "email": "manish@friendsphere.dev",
+    "headline": "Machine Learning Engineer & Clustering Explorer",
+    "id": 37,
+    "interests": [
+      "ai_ml",
+      "data_science",
+      "algorithms",
+      "fitness"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Bengaluru, India",
+    "name": "Manish Joshi",
+    "skills": [
+      "Scikit-Learn",
+      "C++",
+      "K-Means",
+      "PCA"
+    ],
+    "username": "manish_joshi"
+  },
+  {
+    "activityScore": 77.0,
+    "avatar": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=200&auto=format&fit=crop&q=80",
+    "bio": "Building topographic routing apps and offline trail mapping networks.",
+    "college": "University of British Columbia",
+    "coverImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "email": "beatrice@friendsphere.dev",
+    "headline": "Outdoor Enthusiast & Trail Developer",
+    "id": 38,
+    "interests": [
+      "hiking",
+      "fitness",
+      "photography",
+      "open_source"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Vancouver, Canada",
+    "name": "Beatrice Ross",
+    "skills": [
+      "React Native",
+      "Mapbox",
+      "TypeScript",
+      "Python"
+    ],
+    "username": "beatrice_ross"
+  },
+  {
+    "activityScore": 85.0,
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200&auto=format&fit=crop&q=80",
+    "bio": "Dijkstra, A*, Hybrid A*, and RRT* trajectory generation for self-driving pods.",
+    "college": "NYU Abu Dhabi",
+    "coverImage": "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?w=1200&auto=format&fit=crop&q=80",
+    "email": "yusuf@friendsphere.dev",
+    "headline": "Autonomous Vehicles & Path Planning Dev",
+    "id": 39,
+    "interests": [
+      "robotics",
+      "algorithms",
+      "ai_ml",
+      "cloud_comp"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Abu Dhabi, UAE",
+    "name": "Yusuf Al-Hashimi",
+    "skills": [
+      "C++",
+      "ROS2",
+      "Motion Planning",
+      "Python"
+    ],
+    "username": "yusuf_alhashimi"
+  },
+  {
+    "activityScore": 78.0,
+    "avatar": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=200&auto=format&fit=crop&q=80",
+    "bio": "Eurorack modular synths, granular synthesis, and real-time audio analysis tools.",
+    "college": "University of Bristol",
+    "coverImage": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&auto=format&fit=crop&q=80",
+    "email": "rachel@friendsphere.dev",
+    "headline": "Audio Synthesis & Electronic Music Producer",
+    "id": 40,
+    "interests": [
+      "music_prod",
+      "game_dev",
+      "photography",
+      "fitness"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Bristol, UK",
+    "name": "Rachel Green",
+    "skills": [
+      "Ableton",
+      "C++",
+      "WebAudio API",
+      "Sound Design"
+    ],
+    "username": "rachel_green"
+  },
+  {
+    "activityScore": 83.0,
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop&q=80",
+    "bio": "Building fast community hubs, real-time leaderboards, and tournament matchmaking systems.",
+    "college": "Punjab Engineering College",
+    "coverImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&auto=format&fit=crop&q=80",
+    "email": "arjun@friendsphere.dev",
+    "headline": "Full-Stack Dev & Competitive Gamer",
+    "id": 41,
+    "interests": [
+      "web_dev",
+      "game_dev",
+      "competitive_prog",
+      "chess"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Chandigarh, India",
+    "name": "Arjun Kapoor",
+    "skills": [
+      "React",
+      "Express",
+      "C++",
+      "WebRTC"
+    ],
+    "username": "arjun_kapoor"
+  },
+  {
+    "activityScore": 91.0,
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80",
+    "bio": "Centrality metrics, PageRank adaptations, dynamic social network graph evolution.",
+    "college": "University of Toronto",
+    "coverImage": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&auto=format&fit=crop&q=80",
+    "email": "leila@friendsphere.dev",
+    "headline": "Network Science & Graph Mining Researcher",
+    "id": 42,
+    "interests": [
+      "algorithms",
+      "data_science",
+      "ai_ml",
+      "astronomy"
+    ],
+    "joinedDate": "April 2025",
+    "location": "Toronto, Canada",
+    "name": "Leila Moradi",
+    "skills": [
+      "Graph Theory",
+      "Python",
+      "C++",
+      "Network Science"
+    ],
+    "username": "leila_moradi"
+  }
+]

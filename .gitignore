@@ -1,0 +1,110 @@
+# =============================================================================
+# FriendSphere - Full-Stack C++ & React Production .gitignore
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# C++ Build Outputs & Binaries
+# -----------------------------------------------------------------------------
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.pdb
+*.ilk
+*.lib
+*.a
+*.exp
+
+# Project executables & binaries
+friendsphere_server
+friendsphere_server.exe
+backend/friendsphere_server
+backend/friendsphere_server.exe
+backend/build/
+build/
+bin/
+obj/
+out/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+*.ninja
+.ninja_*
+compile_commands.json
+
+# -----------------------------------------------------------------------------
+# Node.js & React Frontend Artifacts
+# -----------------------------------------------------------------------------
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+dist-ssr/
+frontend/dist-ssr/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Vite cache
+frontend/.vite/
+.vite/
+
+# -----------------------------------------------------------------------------
+# Environment & Secrets
+# -----------------------------------------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env.*.local
+
+# -----------------------------------------------------------------------------
+# IDEs, Editors, & Tooling
+# -----------------------------------------------------------------------------
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+*.swp
+*.swo
+*~
+.directory
+
+# -----------------------------------------------------------------------------
+# Operating System Files
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# -----------------------------------------------------------------------------
+# Temporary Data & Crash Dumps
+# -----------------------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.dmp
+*.crash
