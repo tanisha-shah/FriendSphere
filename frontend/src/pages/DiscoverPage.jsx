@@ -76,13 +76,13 @@ export const DiscoverPage = () => {
     <div className="space-y-6 max-w-5xl mx-auto animate-in fade-in duration-200">
       
       {/* Header & Search */}
-      <div className="glow-card rounded-3xl p-6 sm:p-8 space-y-5 bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 border border-slate-800">
+      <div className="glow-card rounded-xl p-6 sm:p-8 space-y-5 from-slate-900 border border-border-subtle">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 flex items-center gap-2.5">
-            <Compass className="w-6 h-6 text-brand-400" />
+          <h1 className="text-2xl font-extrabold text-text-primary flex items-center gap-2.5">
+            <Compass className="w-6 h-6 text-teal-dark" />
             <span>Discover FriendSphere</span>
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-text-secondary mt-1">
             Explore active minds, vibrant communities, and trending tech discussions.
           </p>
         </div>
@@ -94,9 +94,9 @@ export const DiscoverPage = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search people, interests or communities..."
-            className="w-full bg-slate-950/80 text-sm text-slate-100 placeholder-slate-400 rounded-2xl pl-11 pr-4 py-3.5 border border-slate-700/80 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition-all shadow-inner"
+            className="w-full bg-bg text-sm text-text-primary placeholder-slate-400 rounded-lg pl-11 pr-4 py-3.5 border border-border-subtle/80 focus:outline-none focus:border-teal-primary focus:ring-2 focus:ring-brand-500/20 transition-all shadow-inner"
           />
-          <Search className="w-5 h-5 text-slate-400 absolute left-4 top-4" />
+          <Search className="w-5 h-5 text-text-secondary absolute left-4 top-4" />
         </div>
 
         {/* Tab Switcher */}
@@ -112,10 +112,10 @@ export const DiscoverPage = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-2xl text-xs font-semibold transition-all ${
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold transition-all ${
                   activeTab === tab.id
-                    ? 'bg-brand-500 text-slate-950 font-bold shadow-md shadow-brand-500/20'
-                    : 'bg-slate-800/80 text-slate-300 hover:bg-slate-800 hover:text-white'
+                    ? 'bg-teal-primary text-surface font-bold shadow-md shadow-sm'
+                    : 'bg-surface text-text-secondary hover:bg-surface hover:text-text-primary'
                 }`}
               >
                 <Icon className="w-4 h-4" />
@@ -127,7 +127,7 @@ export const DiscoverPage = () => {
       </div>
 
       {actionMsg && (
-        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-xs text-emerald-400">
+        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg text-xs text-teal-dark">
           {actionMsg}
         </div>
       )}
@@ -138,32 +138,32 @@ export const DiscoverPage = () => {
           {people.map((u) => (
             <div
               key={u.id}
-              className="glow-card rounded-3xl p-5 flex flex-col justify-between transition-all hover:-translate-y-1 group border border-slate-800"
+              className="glow-card rounded-xl p-5 flex flex-col justify-between transition-all hover:-translate-y-1 group border border-border-subtle"
             >
               <div>
                 <div className="flex items-center gap-3.5 mb-3">
                   <img
                     src={u.avatar}
                     alt={u.name}
-                    className="w-12 h-12 rounded-2xl object-cover border border-slate-700 group-hover:border-brand-500 transition-colors"
+                    className="w-12 h-12 rounded-lg object-cover border border-border-subtle group-hover:border-teal-primary transition-colors"
                   />
                   <div className="min-w-0">
-                    <Link to={`/profile/${u.id}`} className="text-sm font-bold text-slate-100 hover:text-brand-300 truncate block">
+                    <Link to={`/profile/${u.id}`} className="text-sm font-bold text-text-primary hover:text-teal-primary truncate block">
                       {u.name}
                     </Link>
-                    <p className="text-xs text-brand-400 truncate">@{u.username}</p>
-                    <p className="text-[11px] text-slate-400 truncate">{u.college || u.location}</p>
+                    <p className="text-xs text-teal-dark truncate">@{u.username}</p>
+                    <p className="text-[11px] text-text-secondary truncate">{u.college || u.location}</p>
                   </div>
                 </div>
 
-                <p className="text-xs text-slate-300 line-clamp-2 mb-3">
+                <p className="text-xs text-text-secondary line-clamp-2 mb-3">
                   {u.headline || u.bio}
                 </p>
 
                 {u.interests && (
                   <div className="flex flex-wrap gap-1 mb-3">
                     {u.interests.slice(0, 3).map((item, i) => (
-                      <span key={i} className="px-2 py-0.5 rounded-lg bg-slate-800 text-slate-300 text-[10px] font-mono">
+                      <span key={i} className="px-2 py-0.5 rounded-lg bg-surface text-text-secondary text-[10px] font-mono">
                         #{item}
                       </span>
                     ))}
@@ -171,14 +171,14 @@ export const DiscoverPage = () => {
                 )}
               </div>
 
-              <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
-                <Link to={`/profile/${u.id}`} className="text-xs text-brand-400 font-semibold hover:underline">
+              <div className="pt-3 border-t border-border-subtle flex items-center justify-between">
+                <Link to={`/profile/${u.id}`} className="text-xs text-teal-dark font-semibold hover:underline">
                   View Profile
                 </Link>
                 {u.id !== currentUser?.id && (
                   <button
                     onClick={() => handleConnect(u.id)}
-                    className="px-3 py-1 rounded-xl bg-brand-500/10 hover:bg-brand-500 hover:text-slate-950 text-brand-400 border border-brand-500/30 text-xs font-bold transition-all"
+                    className="px-3 py-1 rounded-xl bg-seafoam hover:bg-teal-primary hover:text-surface text-teal-dark border border-teal-primary/30 text-xs font-bold transition-all"
                   >
                     Connect
                   </button>
@@ -193,23 +193,23 @@ export const DiscoverPage = () => {
       {activeTab === 'communities' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {communities.map((c) => (
-            <div key={c.id} className="glow-card rounded-3xl overflow-hidden border border-slate-800 hover:-translate-y-1 transition-all group">
-              <div className="h-28 relative bg-slate-800 overflow-hidden">
+            <div key={c.id} className="glow-card rounded-xl overflow-hidden border border-border-subtle hover:-translate-y-1 transition-all group">
+              <div className="h-28 relative bg-surface overflow-hidden">
                 <img src={c.banner} alt={c.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent" />
+                <div className="absolute inset-0 from-slate-950 to-transparent" />
                 <div className="absolute bottom-3 left-4 flex items-center gap-3">
-                  <img src={c.avatar} alt={c.name} className="w-10 h-10 rounded-2xl object-cover border-2 border-slate-900" />
+                  <img src={c.avatar} alt={c.name} className="w-10 h-10 rounded-lg object-cover border-2 border-slate-900" />
                   <div>
-                    <h3 className="text-sm font-bold text-slate-100">{c.name}</h3>
-                    <p className="text-[11px] text-brand-400">{c.category}</p>
+                    <h3 className="text-sm font-bold text-text-primary">{c.name}</h3>
+                    <p className="text-[11px] text-teal-dark">{c.category}</p>
                   </div>
                 </div>
               </div>
               <div className="p-4 space-y-3">
-                <p className="text-xs text-slate-300 line-clamp-2">{c.description}</p>
+                <p className="text-xs text-text-secondary line-clamp-2">{c.description}</p>
                 <div className="flex items-center justify-between pt-2 border-t border-slate-850 text-xs">
-                  <span className="text-slate-400">{c.memberIds?.length || 15} members</span>
-                  <Link to="/communities" className="text-brand-400 font-semibold hover:underline">
+                  <span className="text-text-secondary">{c.memberIds?.length || 15} members</span>
+                  <Link to="/communities" className="text-teal-dark font-semibold hover:underline">
                     View Community →
                   </Link>
                 </div>
@@ -223,10 +223,10 @@ export const DiscoverPage = () => {
       {activeTab === 'interests' && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {interests.map((item) => (
-            <div key={item.id} className="glow-card rounded-2xl p-4 space-y-1.5 border border-slate-800 hover:border-brand-500/40 transition-colors">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-brand-400">{item.category}</span>
-              <h3 className="text-sm font-bold text-slate-200">#{item.name}</h3>
-              <p className="text-xs text-slate-400">Discover active members and discussions</p>
+            <div key={item.id} className="glow-card rounded-lg p-4 space-y-1.5 border border-border-subtle hover:border-teal-primary/40 transition-colors">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-teal-dark">{item.category}</span>
+              <h3 className="text-sm font-bold text-text-primary">#{item.name}</h3>
+              <p className="text-xs text-text-secondary">Discover active members and discussions</p>
             </div>
           ))}
         </div>
@@ -234,19 +234,19 @@ export const DiscoverPage = () => {
 
       {/* Tab 4: Trending */}
       {activeTab === 'trending' && (
-        <div className="glow-card rounded-3xl p-6 divide-y divide-slate-800 space-y-4">
-          <h2 className="text-sm font-bold text-slate-100 flex items-center gap-2 pb-2">
-            <TrendingUp className="w-4 h-4 text-brand-400" />
+        <div className="glow-card rounded-xl p-6 divide-y divide-slate-800 space-y-4">
+          <h2 className="text-sm font-bold text-text-primary flex items-center gap-2 pb-2">
+            <TrendingUp className="w-4 h-4 text-teal-dark" />
             <span>Trending Across FriendSphere</span>
           </h2>
           {trendingTopics.map((topic, i) => (
             <div key={i} className="pt-4 flex items-center justify-between">
               <div>
-                <span className="text-[10px] text-slate-400 font-semibold">{topic.category} • Trending</span>
-                <h4 className="text-sm font-bold text-slate-100 mt-0.5">#{topic.name}</h4>
-                <span className="text-xs text-slate-400">{topic.count}</span>
+                <span className="text-[10px] text-text-secondary font-semibold">{topic.category} • Trending</span>
+                <h4 className="text-sm font-bold text-text-primary mt-0.5">#{topic.name}</h4>
+                <span className="text-xs text-text-secondary">{topic.count}</span>
               </div>
-              <span className="text-xs text-brand-400 font-semibold">Explore →</span>
+              <span className="text-xs text-teal-dark font-semibold">Explore →</span>
             </div>
           ))}
         </div>

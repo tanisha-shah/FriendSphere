@@ -15,10 +15,11 @@ export const AuthProvider = ({ children }) => {
       const users = await api.getUsers();
       setAllUsers(users);
       if (users.length > 0) {
-        const savedUserId = localStorage.getItem('friendsphere_active_user_id');
-        const initial = users.find(u => u.id === Number(savedUserId)) || users[0];
-        setCurrentUser(initial);
-        updatePendingCount(initial.id);
+        // Tanisha Shah (id: 1) is the active user for the simulation
+        const activeUser = users.find(u => u.id === 1) || users[0];
+        setCurrentUser(activeUser);
+        localStorage.setItem('friendsphere_active_user_id', activeUser.id);
+        updatePendingCount(activeUser.id);
       }
     } catch (err) {
       console.error('Failed to load users:', err);
@@ -39,6 +40,9 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     fetchUsersAndSetInitial();
   }, []);
+
+  const login = () => ({ success: true });
+  const logout = () => {};
 
   const switchUser = (userId) => {
     const user = allUsers.find(u => u.id === Number(userId));
@@ -67,6 +71,8 @@ export const AuthProvider = ({ children }) => {
         allUsers,
         loading,
         pendingRequestsCount,
+        login,
+        logout,
         switchUser,
         refreshCurrentUser,
         updatePendingCount

@@ -80,21 +80,21 @@ export const DiscoveryPage = () => {
     <div className="space-y-6 animate-in fade-in duration-200">
       
       {/* Hero Banner with DAA Highlights */}
-      <div className="glow-card rounded-3xl p-6 sm:p-8 bg-gradient-to-br from-slate-900 via-slate-850 to-slate-900 border border-brand-500/20 relative overflow-hidden">
-        <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="glow-card rounded-xl p-6 sm:p-8 from-slate-900 border border-teal-primary/20 relative overflow-hidden">
+        <div className="absolute -right-10 -bottom-10 w-72 h-72 bg-seafoam rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10 max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-semibold text-brand-400">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-seafoam border border-teal-primary/30 text-xs font-semibold text-teal-dark">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Central DAA Recommendation Engine</span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-100 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text-primary tracking-tight">
             Intelligent Friend Discovery & Social Affinity
           </h1>
 
-          <p className="text-sm text-slate-300 leading-relaxed">
-            Discover potential connections scored in genuine <span className="text-brand-300 font-semibold">C++17/20</span> using <span className="text-blue-400 font-mono">BFS Degrees of Separation</span>, <span className="text-cyan-400 font-mono">Jaccard Interest Index</span>, <span className="text-indigo-400 font-mono">High-Dimensional Cosine Vectors</span>, <span className="text-emerald-400 font-mono">Dijkstra Affinity</span>, and <span className="text-amber-400 font-mono">DSU Social Clusters</span>.
+          <p className="text-sm text-text-secondary leading-relaxed">
+            Discover potential connections scored in genuine <span className="text-teal-primary font-semibold">C++17/20</span> using <span className="text-blue-400 font-mono">BFS Degrees of Separation</span>, <span className="text-cyan-400 font-mono">Jaccard Interest Index</span>, <span className="text-teal-dark font-mono">High-Dimensional Cosine Vectors</span>, <span className="text-teal-dark font-mono">Dijkstra Affinity</span>, and <span className="text-text-secondary font-mono">DSU Social Clusters</span>.
           </p>
 
           <div className="flex flex-wrap items-center gap-2 pt-2">
@@ -109,17 +109,17 @@ export const DiscoveryPage = () => {
       </div>
 
       {/* Control Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-lg bg-surface-sec border border-border-subtle">
         <div className="flex items-center gap-3">
-          <span className="text-xs font-semibold text-slate-300">Top-K Heap Filter:</span>
+          <span className="text-xs font-semibold text-text-secondary">Top-K Heap Filter:</span>
           {[6, 12, 20].map((num) => (
             <button
               key={num}
               onClick={() => setTopK(num)}
               className={`px-3 py-1.5 rounded-xl text-xs font-mono font-medium transition-all ${
                 topK === num
-                  ? 'bg-brand-500 text-slate-950 font-bold shadow-md shadow-brand-500/20'
-                  : 'bg-slate-800 text-slate-300 hover:bg-slate-750'
+                  ? 'bg-teal-primary text-surface font-bold shadow-md shadow-sm'
+                  : 'bg-surface text-text-secondary hover:bg-surface-hov'
               }`}
             >
               Top {num}
@@ -128,7 +128,7 @@ export const DiscoveryPage = () => {
         </div>
 
         {actionMessage && (
-          <div className="text-xs font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1.5 rounded-xl flex items-center gap-2 animate-in fade-in">
+          <div className="text-xs font-medium text-teal-dark bg-emerald-500/10 border border-emerald-500/30 px-3 py-1.5 rounded-xl flex items-center gap-2 animate-in fade-in">
             <CheckCircle2 className="w-4 h-4" />
             <span>{actionMessage}</span>
           </div>
@@ -139,16 +139,16 @@ export const DiscoveryPage = () => {
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="glow-card rounded-2xl p-5 h-64 animate-pulse space-y-4">
+            <div key={i} className="glow-card rounded-lg p-5 h-64 animate-pulse space-y-4">
               <div className="flex gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-slate-800" />
+                <div className="w-14 h-14 rounded-lg bg-surface" />
                 <div className="flex-1 space-y-2">
-                  <div className="h-4 bg-slate-800 rounded w-3/4" />
-                  <div className="h-3 bg-slate-800 rounded w-1/2" />
+                  <div className="h-4 bg-surface rounded w-3/4" />
+                  <div className="h-3 bg-surface rounded w-1/2" />
                 </div>
               </div>
-              <div className="h-10 bg-slate-800 rounded-xl" />
-              <div className="h-8 bg-slate-800 rounded-xl" />
+              <div className="h-10 bg-surface rounded-xl" />
+              <div className="h-8 bg-surface rounded-xl" />
             </div>
           ))}
         </div>
@@ -161,12 +161,12 @@ export const DiscoveryPage = () => {
             return (
               <div
                 key={cand.userId}
-                className="glow-card rounded-3xl p-5 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-500/5 group relative"
+                className="glow-card rounded-xl p-5 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:shadow-md hover:shadow-sm group relative"
               >
                 {/* Ranking Pill */}
-                <div className="absolute top-4 right-4 flex items-center gap-1 bg-slate-800/90 border border-slate-700 px-2.5 py-1 rounded-full text-[11px] font-mono font-bold text-brand-400">
+                <div className="absolute top-4 right-4 flex items-center gap-1 bg-surface border border-border-subtle px-2.5 py-1 rounded-full text-[11px] font-mono font-bold text-teal-dark">
                   <span>#{index + 1}</span>
-                  <span className="text-slate-400">|</span>
+                  <span className="text-text-secondary">|</span>
                   <span>{scorePercent}%</span>
                 </div>
 
@@ -176,24 +176,24 @@ export const DiscoveryPage = () => {
                     <img
                       src={user.avatar}
                       alt={user.name}
-                      className="w-14 h-14 rounded-2xl object-cover border-2 border-brand-500/40 shrink-0 group-hover:border-brand-400 transition-colors"
+                      className="w-14 h-14 rounded-lg object-cover border-2 border-teal-primary/40 shrink-0 group-hover:border-brand-400 transition-colors"
                     />
                     <div className="min-w-0">
-                      <h3 className="text-sm font-bold text-slate-100 truncate group-hover:text-brand-300 transition-colors">
+                      <h3 className="text-sm font-bold text-text-primary truncate group-hover:text-teal-primary transition-colors">
                         {user.name}
                       </h3>
-                      <p className="text-xs text-brand-400 font-medium truncate">@{user.username}</p>
-                      <p className="text-[11px] text-slate-400 truncate">{user.location}</p>
+                      <p className="text-xs text-teal-dark font-medium truncate">@{user.username}</p>
+                      <p className="text-[11px] text-text-secondary truncate">{user.location}</p>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-300 line-clamp-2 mb-3.5">
+                  <p className="text-xs text-text-secondary line-clamp-2 mb-3.5">
                     {user.headline || user.bio}
                   </p>
 
                   {/* Primary Transparent Reason */}
-                  <div className="p-3 rounded-2xl bg-slate-850/80 border border-slate-700/60 mb-3.5 text-xs text-slate-200 space-y-1">
-                    <div className="text-[10px] font-semibold text-brand-400 uppercase tracking-wider flex items-center gap-1">
+                  <div className="p-3 rounded-lg bg-surface-sec border border-border-subtle/60 mb-3.5 text-xs text-text-primary space-y-1">
+                    <div className="text-[10px] font-semibold text-teal-dark uppercase tracking-wider flex items-center gap-1">
                       <Sparkles className="w-3 h-3" />
                       <span>Why Recommended</span>
                     </div>
@@ -206,13 +206,13 @@ export const DiscoveryPage = () => {
                       {cand.sharedInterests.slice(0, 3).map((item, i) => (
                         <span
                           key={i}
-                          className="px-2 py-0.5 rounded-lg bg-slate-800 text-slate-300 text-[10px] font-medium border border-slate-700/80"
+                          className="px-2 py-0.5 rounded-lg bg-surface text-text-secondary text-[10px] font-medium border border-border-subtle/80"
                         >
                           #{item}
                         </span>
                       ))}
                       {cand.sharedInterests.length > 3 && (
-                        <span className="text-[10px] text-slate-400 self-center">
+                        <span className="text-[10px] text-text-secondary self-center">
                           +{cand.sharedInterests.length - 3} more
                         </span>
                       )}
@@ -221,19 +221,19 @@ export const DiscoveryPage = () => {
                 </div>
 
                 {/* Card Actions */}
-                <div className="pt-3 border-t border-slate-800/80 space-y-2">
+                <div className="pt-3 border-t border-border-subtle/80 space-y-2">
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleExplain(cand)}
-                      className="flex-1 py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-300 hover:text-white border border-slate-700 text-xs font-semibold transition-all flex items-center justify-center gap-1.5"
+                      className="flex-1 py-2 px-3 rounded-xl bg-surface hover:bg-surface-hov text-text-secondary hover:text-text-primary border border-border-subtle text-xs font-semibold transition-all flex items-center justify-center gap-1.5"
                     >
-                      <HelpCircle className="w-3.5 h-3.5 text-brand-400" />
+                      <HelpCircle className="w-3.5 h-3.5 text-teal-dark" />
                       <span>Why This Match?</span>
                     </button>
 
                     <button
                       onClick={() => handleDirectConnect(cand.userId)}
-                      className="py-2 px-3 rounded-xl bg-gradient-to-r from-brand-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-slate-950 text-xs font-bold transition-all shadow-md shadow-brand-500/20 flex items-center justify-center gap-1"
+                      className="py-2 px-3 rounded-xl bg-teal-primary hover:bg-teal-primary hover:text-surface text-xs font-bold transition-all shadow-md shadow-sm flex items-center justify-center gap-1"
                       title="Add Direct Connection"
                     >
                       <UserPlus className="w-3.5 h-3.5" />
@@ -247,10 +247,10 @@ export const DiscoveryPage = () => {
           })}
         </div>
       ) : (
-        <div className="glow-card rounded-3xl p-12 text-center space-y-3">
+        <div className="glow-card rounded-xl p-12 text-center space-y-3">
           <Users className="w-12 h-12 text-slate-600 mx-auto" />
-          <h3 className="text-base font-bold text-slate-300">No New Recommendations Found</h3>
-          <p className="text-xs text-slate-400 max-w-sm mx-auto">
+          <h3 className="text-base font-bold text-text-secondary">No New Recommendations Found</h3>
+          <p className="text-xs text-text-secondary max-w-sm mx-auto">
             You are currently connected or have pending requests with all closely matched users in this social circle.
           </p>
         </div>

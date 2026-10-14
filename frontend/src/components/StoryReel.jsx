@@ -11,17 +11,17 @@ export const StoryReel = () => {
     <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
       {/* Create Story card */}
       {currentUser && (
-        <div className="shrink-0 w-28 h-40 rounded-3xl overflow-hidden relative group cursor-pointer border border-slate-800 bg-slate-900 transition-all hover:border-brand-500/40">
+        <div className="shrink-0 w-28 h-40 rounded-xl overflow-hidden relative group cursor-pointer border border-border-subtle bg-surface-sec transition-all hover:border-teal-primary/40">
           <img
             src={currentUser.avatar}
             alt={currentUser.name}
             className="w-full h-24 object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          <div className="absolute bottom-0 left-0 right-0 p-2 bg-slate-850 flex flex-col items-center">
-            <div className="-mt-6 w-8 h-8 rounded-full bg-brand-500 border-2 border-slate-900 flex items-center justify-center text-slate-950 shadow-md">
+          <div className="absolute bottom-0 left-0 right-0 p-2 bg-surface-sec flex flex-col items-center">
+            <div className="-mt-6 w-8 h-8 rounded-full bg-teal-primary border-2 border-slate-900 flex items-center justify-center text-surface shadow-md">
               <Plus className="w-4 h-4" />
             </div>
-            <span className="text-[10px] font-bold text-slate-200 mt-1">Add Story</span>
+            <span className="text-[10px] font-bold text-text-primary mt-1">Add Story</span>
           </div>
         </div>
       )}
@@ -30,14 +30,14 @@ export const StoryReel = () => {
       {stories.map((user) => (
         <div
           key={user.id}
-          className="shrink-0 w-28 h-40 rounded-3xl overflow-hidden relative group cursor-pointer border border-slate-800 transition-all hover:scale-[1.02] shadow-lg"
+          className="shrink-0 w-28 h-40 rounded-xl overflow-hidden relative group cursor-pointer border border-border-subtle transition-all hover:scale-[1.02] shadow-sm"
         >
           <img
             src={user.coverImage || user.avatar}
             alt={user.name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-transparent to-slate-950/80" />
+          <div className="absolute inset-0 from-slate-950/20 via-transparent to-slate-950/80" />
           
           <div className="absolute top-2.5 left-2.5">
             <img
@@ -48,7 +48,7 @@ export const StoryReel = () => {
           </div>
 
           <div className="absolute bottom-2.5 left-2.5 right-2.5">
-            <span className="text-xs font-bold text-slate-100 line-clamp-1 drop-shadow-md">
+            <span className="text-xs font-bold text-text-primary line-clamp-1 drop-shadow-md">
               {user.name.split(' ')[0]}
             </span>
           </div>

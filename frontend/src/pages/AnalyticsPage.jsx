@@ -76,7 +76,7 @@ export const AnalyticsPage = () => {
       <div className="space-y-6 max-w-5xl mx-auto animate-pulse">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           {[...Array(5)].map((_, i) => (
-            <div key={i} className="glow-card rounded-3xl h-28 bg-slate-900" />
+            <div key={i} className="glow-card rounded-xl h-28 bg-surface-sec" />
           ))}
         </div>
       </div>
@@ -95,11 +95,11 @@ export const AnalyticsPage = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 flex items-center gap-2.5">
-            <BarChart3 className="w-6 h-6 text-brand-400" />
+          <h1 className="text-2xl font-extrabold text-text-primary flex items-center gap-2.5">
+            <BarChart3 className="w-6 h-6 text-teal-dark" />
             <span>Social Network Analytics</span>
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-text-secondary mt-1">
             Real-time insights into your personal network reach, community growth, and connection dynamics.
           </p>
         </div>
@@ -109,29 +109,29 @@ export const AnalyticsPage = () => {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         
         {/* Total Friends */}
-        <div className="glow-card rounded-3xl p-5 border border-slate-800 space-y-1.5">
-          <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Total Friends</span>
-          <div className="text-2xl sm:text-3xl font-black text-slate-100 font-mono">8</div>
-          <span className="text-[10px] text-emerald-400 font-medium">Direct Connections</span>
+        <div className="glow-card rounded-xl p-5 border border-border-subtle space-y-1.5">
+          <span className="text-[11px] text-text-secondary font-bold uppercase tracking-wider">Total Friends</span>
+          <div className="text-2xl sm:text-3xl font-black text-text-primary font-mono">8</div>
+          <span className="text-[10px] text-teal-dark font-medium">Direct Connections</span>
         </div>
 
         {/* Friends of Friends */}
-        <div className="glow-card rounded-3xl p-5 border border-slate-800 space-y-1.5">
-          <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Friends of Friends</span>
-          <div className="text-2xl sm:text-3xl font-black text-brand-400 font-mono">34</div>
-          <span className="text-[10px] text-brand-300 font-medium">2nd-Degree Reach</span>
+        <div className="glow-card rounded-xl p-5 border border-border-subtle space-y-1.5">
+          <span className="text-[11px] text-text-secondary font-bold uppercase tracking-wider">Friends of Friends</span>
+          <div className="text-2xl sm:text-3xl font-black text-teal-dark font-mono">34</div>
+          <span className="text-[10px] text-teal-primary font-medium">2nd-Degree Reach</span>
         </div>
 
         {/* Communities */}
-        <div className="glow-card rounded-3xl p-5 border border-slate-800 space-y-1.5">
-          <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Communities</span>
-          <div className="text-2xl sm:text-3xl font-black text-purple-400 font-mono">6</div>
-          <span className="text-[10px] text-purple-300 font-medium">Active Circles</span>
+        <div className="glow-card rounded-xl p-5 border border-border-subtle space-y-1.5">
+          <span className="text-[11px] text-text-secondary font-bold uppercase tracking-wider">Communities</span>
+          <div className="text-2xl sm:text-3xl font-black text-teal-dark font-mono">6</div>
+          <span className="text-[10px] text-teal-dark font-medium">Active Circles</span>
         </div>
 
         {/* Network Density */}
-        <div className="glow-card rounded-3xl p-5 border border-slate-800 space-y-1.5">
-          <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Network Density</span>
+        <div className="glow-card rounded-xl p-5 border border-border-subtle space-y-1.5">
+          <span className="text-[11px] text-text-secondary font-bold uppercase tracking-wider">Network Density</span>
           <div className="text-2xl sm:text-3xl font-black text-blue-400 font-mono">
             {(analytics.networkDensity * 100).toFixed(1)}%
           </div>
@@ -139,10 +139,10 @@ export const AnalyticsPage = () => {
         </div>
 
         {/* Avg Distance */}
-        <div className="glow-card rounded-3xl p-5 border border-slate-800 space-y-1.5 col-span-2 sm:col-span-1">
-          <span className="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Avg Distance</span>
-          <div className="text-2xl sm:text-3xl font-black text-amber-400 font-mono">1.8</div>
-          <span className="text-[10px] text-amber-300 font-medium">Hops to Anyone</span>
+        <div className="glow-card rounded-xl p-5 border border-border-subtle space-y-1.5 col-span-2 sm:col-span-1">
+          <span className="text-[11px] text-text-secondary font-bold uppercase tracking-wider">Avg Distance</span>
+          <div className="text-2xl sm:text-3xl font-black text-text-secondary font-mono">1.8</div>
+          <span className="text-[10px] text-text-secondary font-medium">Hops to Anyone</span>
         </div>
 
       </div>
@@ -151,13 +151,13 @@ export const AnalyticsPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         
         {/* Network Growth Over Time */}
-        <div className="glow-card rounded-3xl p-6 space-y-4 border border-slate-800">
+        <div className="glow-card rounded-xl p-6 space-y-4 border border-border-subtle">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-bold text-slate-100 flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-brand-400" />
+            <h3 className="text-sm font-bold text-text-primary flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-teal-dark" />
               <span>Network Expansion Over Time</span>
             </h3>
-            <span className="text-[11px] text-slate-400 font-medium">Monthly Growth</span>
+            <span className="text-[11px] text-text-secondary font-medium">Monthly Growth</span>
           </div>
 
           <div className="h-64 w-full pt-2">
@@ -181,13 +181,13 @@ export const AnalyticsPage = () => {
         </div>
 
         {/* Friend Degree Distribution */}
-        <div className="glow-card rounded-3xl p-6 space-y-4 border border-slate-800">
+        <div className="glow-card rounded-xl p-6 space-y-4 border border-border-subtle">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-bold text-slate-100 flex items-center gap-2">
+            <h3 className="text-sm font-bold text-text-primary flex items-center gap-2">
               <Users className="w-4 h-4 text-blue-400" />
               <span>Friend Connectivity Distribution</span>
             </h3>
-            <span className="text-[11px] text-slate-400 font-medium">Connection Tiers</span>
+            <span className="text-[11px] text-text-secondary font-medium">Connection Tiers</span>
           </div>
 
           <div className="h-64 w-full pt-2">
@@ -205,10 +205,10 @@ export const AnalyticsPage = () => {
         </div>
 
         {/* Interest Distribution */}
-        <div className="glow-card rounded-3xl p-6 space-y-4 border border-slate-800">
+        <div className="glow-card rounded-xl p-6 space-y-4 border border-border-subtle">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-bold text-slate-100 flex items-center gap-2">
-              <Compass className="w-4 h-4 text-indigo-400" />
+            <h3 className="text-sm font-bold text-text-primary flex items-center gap-2">
+              <Compass className="w-4 h-4 text-teal-dark" />
               <span>Interest Distribution Across Network</span>
             </h3>
           </div>
@@ -232,17 +232,17 @@ export const AnalyticsPage = () => {
                 <Tooltip
                   contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '16px', fontSize: '12px' }}
                 />
-                <Legend formatter={(value) => <span className="text-xs text-slate-300">{value}</span>} />
+                <Legend formatter={(value) => <span className="text-xs text-text-secondary">{value}</span>} />
               </PieChart>
             </ResponsiveContainer>
           </div>
         </div>
 
         {/* Community Sizes */}
-        <div className="glow-card rounded-3xl p-6 space-y-4 border border-slate-800">
+        <div className="glow-card rounded-xl p-6 space-y-4 border border-border-subtle">
           <div className="flex items-center justify-between">
-            <h3 className="text-sm font-bold text-slate-100 flex items-center gap-2">
-              <Layers className="w-4 h-4 text-purple-400" />
+            <h3 className="text-sm font-bold text-text-primary flex items-center gap-2">
+              <Layers className="w-4 h-4 text-teal-dark" />
               <span>Community Sizes & Engagement</span>
             </h3>
           </div>
@@ -256,10 +256,10 @@ export const AnalyticsPage = () => {
             ].map((comm, idx) => (
               <div key={idx} className="space-y-1">
                 <div className="flex justify-between text-xs">
-                  <span className="font-semibold text-slate-200">{comm.name}</span>
-                  <span className="text-slate-400 font-mono">{comm.members} members</span>
+                  <span className="font-semibold text-text-primary">{comm.name}</span>
+                  <span className="text-text-secondary font-mono">{comm.members} members</span>
                 </div>
-                <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div className="h-2 bg-surface rounded-full overflow-hidden">
                   <div className={`h-full ${comm.color} rounded-full`} style={{ width: `${comm.percent}%` }} />
                 </div>
               </div>

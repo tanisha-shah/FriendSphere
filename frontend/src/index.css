@@ -4,9 +4,9 @@
 
 @layer base {
   body {
-    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #0b0f19;
-    color: #f1f5f9;
+    font-family: 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: theme('colors.bg');
+    color: theme('colors.text-primary');
   }
 }
 
@@ -16,42 +16,29 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: theme('colors.surface-sec');
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: theme('colors.border-subtle');
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: theme('colors.border-strong');
 }
 
-/* Glowing effects */
-.glow-brand {
-  box-shadow: 0 0 25px -5px rgba(20, 184, 166, 0.35);
-}
-
+/* Redefined card */
 .glow-card {
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: theme('colors.surface');
+  border: 1px solid theme('colors.border-subtle');
+  border-radius: 12px;
+  transition: all 0.2s ease;
 }
 
 .glow-card:hover {
-  border-color: rgba(45, 212, 191, 0.3);
+  border-color: theme('colors.border-strong');
 }
 
+/* Basic animation replace */
 .badge-pulse {
-  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    opacity: 1;
-    box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
-  }
-  50% {
-    opacity: 0.7;
-    box-shadow: 0 0 2px rgba(20, 184, 166, 0.2);
-  }
+  opacity: 0.9;
 }

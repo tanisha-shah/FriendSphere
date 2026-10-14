@@ -7,25 +7,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-        },
-        slate: {
-          850: '#172033',
-          950: '#0a0f1d'
-        }
+        bg: '#F1F6F2',
+        surface: '#FAFCFA',
+        'surface-sec': '#E8F0EA',
+        'surface-hov': '#E4EEE7',
+        'sage-soft': '#DCEBE1',
+        seafoam: '#CDE5DA',
+        'teal-accent': '#5E9885',
+        'teal-primary': '#397B69',
+        'teal-hover': '#2F6859',
+        'teal-dark': '#285448',
+        'text-primary': '#293B33',
+        'text-secondary': '#65766D',
+        'text-muted': '#849189',
+        'border-subtle': '#DCE5DD',
+        'border-strong': '#C8D7CC',
+        success: '#4F8062',
+        warning: '#A77737',
+        error: '#B85D58',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        sans: ['"DM Sans"', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
       }
     },
   },

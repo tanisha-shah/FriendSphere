@@ -212,42 +212,42 @@ export const NetworkPage = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 flex items-center gap-2.5">
-            <Network className="w-6 h-6 text-brand-400" />
+          <h1 className="text-2xl font-extrabold text-text-primary flex items-center gap-2.5">
+            <Network className="w-6 h-6 text-teal-dark" />
             <span>My Social Network</span>
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-text-secondary mt-1">
             Explore your social network topology, connection distances, and community clusters.
           </p>
         </div>
 
         {/* Legend */}
-        <div className="flex flex-wrap items-center gap-2.5 bg-slate-900/90 p-2.5 rounded-2xl border border-slate-800 text-[11px]">
+        <div className="flex flex-wrap items-center gap-2.5 bg-surface-sec p-2.5 rounded-lg border border-border-subtle text-[11px]">
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-brand-400"></span>
-            <span className="text-slate-300">You</span>
+            <span className="text-text-secondary">You</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-            <span className="text-slate-300">Direct Friend</span>
+            <span className="text-text-secondary">Direct Friend</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-sky-400"></span>
-            <span className="text-slate-300">Friend of Friend</span>
+            <span className="text-text-secondary">Friend of Friend</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-            <span className="text-slate-300">Suggested Match</span>
+            <span className="text-text-secondary">Suggested Match</span>
           </div>
           <div className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
-            <span className="text-slate-300">Community</span>
+            <span className="text-text-secondary">Community</span>
           </div>
         </div>
       </div>
 
       {actionSuccess && (
-        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-xs text-emerald-400 flex items-center gap-2">
+        <div className="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-lg text-xs text-teal-dark flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{actionSuccess}</span>
         </div>
@@ -257,22 +257,22 @@ export const NetworkPage = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Canvas */}
-        <div className="lg:col-span-2 h-[580px] relative glow-card rounded-3xl overflow-hidden border border-slate-800" ref={containerRef}>
+        <div className="lg:col-span-2 h-[580px] relative glow-card rounded-xl overflow-hidden border border-border-subtle" ref={containerRef}>
           {loading ? (
-            <div className="w-full h-full flex items-center justify-center text-xs text-slate-400 animate-pulse">
+            <div className="w-full h-full flex items-center justify-center text-xs text-text-secondary animate-pulse">
               Mapping social connections...
             </div>
           ) : (
-            <svg ref={svgRef} className="w-full h-full cursor-grab active:cursor-grabbing bg-slate-950" />
+            <svg ref={svgRef} className="w-full h-full cursor-grab active:cursor-grabbing bg-bg" />
           )}
 
-          <div className="absolute bottom-3 right-3 text-[11px] text-slate-500 bg-slate-900/80 px-2.5 py-1 rounded-xl">
+          <div className="absolute bottom-3 right-3 text-[11px] text-surface0 bg-surface-sec px-2.5 py-1 rounded-xl">
             Drag nodes • Scroll to Zoom & Pan
           </div>
         </div>
 
         {/* Selected Node Inspector Drawer */}
-        <div className="glow-card rounded-3xl p-5 space-y-5 border border-slate-800">
+        <div className="glow-card rounded-xl p-5 space-y-5 border border-border-subtle">
           {selectedUser ? (
             <div className="space-y-4 animate-in fade-in duration-150">
               
@@ -281,41 +281,41 @@ export const NetworkPage = () => {
                   <img
                     src={selectedUser.avatar}
                     alt={selectedUser.name}
-                    className="w-14 h-14 rounded-2xl object-cover border-2 border-brand-500/40"
+                    className="w-14 h-14 rounded-lg object-cover border-2 border-teal-primary/40"
                   />
                   <div>
-                    <h3 className="text-sm font-bold text-slate-100">{selectedUser.name}</h3>
-                    <p className="text-xs text-brand-400 font-medium">@{selectedUser.username}</p>
-                    <p className="text-[11px] text-slate-400">{selectedUser.college || selectedUser.location}</p>
+                    <h3 className="text-sm font-bold text-text-primary">{selectedUser.name}</h3>
+                    <p className="text-xs text-teal-dark font-medium">@{selectedUser.username}</p>
+                    <p className="text-[11px] text-text-secondary">{selectedUser.college || selectedUser.location}</p>
                   </div>
                 </div>
 
                 <button
                   onClick={() => setSelectedUser(null)}
-                  className="p-1 text-slate-400 hover:text-white"
+                  className="p-1 text-text-secondary hover:text-text-primary"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
 
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-text-secondary leading-relaxed">
                 {selectedUser.headline || selectedUser.bio}
               </p>
 
               {/* Network Connection Stats */}
               {selectedUserStats && (
-                <div className="space-y-3 pt-3 border-t border-slate-800">
+                <div className="space-y-3 pt-3 border-t border-border-subtle">
                   <div className="grid grid-cols-2 gap-2 text-xs">
-                    <div className="p-2.5 rounded-2xl bg-slate-850">
-                      <span className="text-slate-400 text-[10px] uppercase font-bold block">Social Distance</span>
-                      <span className="text-sm font-black font-mono text-slate-100">
+                    <div className="p-2.5 rounded-lg bg-surface-sec">
+                      <span className="text-text-secondary text-[10px] uppercase font-bold block">Social Distance</span>
+                      <span className="text-sm font-black font-mono text-text-primary">
                         {selectedUserStats.hops} Degree{selectedUserStats.hops !== 1 ? 's' : ''}
                       </span>
                     </div>
 
-                    <div className="p-2.5 rounded-2xl bg-slate-850">
-                      <span className="text-slate-400 text-[10px] uppercase font-bold block">Affinity Score</span>
-                      <span className="text-sm font-black font-mono text-brand-400">
+                    <div className="p-2.5 rounded-lg bg-surface-sec">
+                      <span className="text-text-secondary text-[10px] uppercase font-bold block">Affinity Score</span>
+                      <span className="text-sm font-black font-mono text-teal-dark">
                         {selectedUserStats.affinity}%
                       </span>
                     </div>
@@ -324,14 +324,14 @@ export const NetworkPage = () => {
                   {/* Mutual Friends list */}
                   {selectedUserStats.mutuals?.length > 0 && (
                     <div className="space-y-1.5">
-                      <span className="text-xs font-semibold text-slate-300">
+                      <span className="text-xs font-semibold text-text-secondary">
                         Mutual Friends ({selectedUserStats.mutuals.length}):
                       </span>
                       <div className="flex flex-wrap gap-1.5">
                         {selectedUserStats.mutuals.map((m) => (
                           <span
                             key={m.id}
-                            className="px-2 py-0.5 rounded-lg bg-slate-800 text-[11px] text-slate-200 border border-slate-700"
+                            className="px-2 py-0.5 rounded-lg bg-surface text-[11px] text-text-primary border border-border-subtle"
                           >
                             {m.name}
                           </span>
@@ -343,10 +343,10 @@ export const NetworkPage = () => {
                   {/* Interests */}
                   {selectedUser.interests && (
                     <div className="space-y-1.5">
-                      <span className="text-xs font-semibold text-slate-300">Shared Topics:</span>
+                      <span className="text-xs font-semibold text-text-secondary">Shared Topics:</span>
                       <div className="flex flex-wrap gap-1">
                         {selectedUser.interests.map((t, i) => (
-                          <span key={i} className="px-2 py-0.5 rounded-lg bg-brand-500/10 text-brand-300 text-[10px] font-mono">
+                          <span key={i} className="px-2 py-0.5 rounded-lg bg-seafoam text-teal-primary text-[10px] font-mono">
                             #{t}
                           </span>
                         ))}
@@ -358,16 +358,16 @@ export const NetworkPage = () => {
 
               {/* Action Buttons */}
               {selectedUser.id !== currentUser?.id && (
-                <div className="pt-3 border-t border-slate-800 flex gap-2">
+                <div className="pt-3 border-t border-border-subtle flex gap-2">
                   {friendsSet.has(selectedUser.id) ? (
-                    <span className="w-full py-2.5 text-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold text-xs flex items-center justify-center gap-1.5">
+                    <span className="w-full py-2.5 text-center rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-teal-dark font-bold text-xs flex items-center justify-center gap-1.5">
                       <CheckCircle2 className="w-4 h-4" />
                       Direct Friend
                     </span>
                   ) : (
                     <button
                       onClick={() => handleConnectDirect(selectedUser.id)}
-                      className="w-full py-2.5 rounded-2xl bg-gradient-to-r from-brand-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-brand-500/20 flex items-center justify-center gap-1.5"
+                      className="w-full py-2.5 rounded-lg bg-teal-primary hover:bg-teal-primary hover:text-surface font-bold text-xs transition-all shadow-md shadow-sm flex items-center justify-center gap-1.5"
                     >
                       <UserPlus className="w-4 h-4" />
                       <span>Add to Network</span>
@@ -378,10 +378,10 @@ export const NetworkPage = () => {
 
             </div>
           ) : (
-            <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-3 text-slate-400">
+            <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-3 text-text-secondary">
               <Network className="w-12 h-12 text-slate-700" />
-              <h4 className="text-sm font-bold text-slate-300">Select any connection</h4>
-              <p className="text-xs text-slate-500 max-w-xs">
+              <h4 className="text-sm font-bold text-text-secondary">Select any connection</h4>
+              <p className="text-xs text-surface0 max-w-xs">
                 Click any person in the network graph to inspect degrees of separation, shared topics, and shortest social paths.
               </p>
             </div>

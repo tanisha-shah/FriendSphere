@@ -6,24 +6,38 @@ import { Sidebar } from './components/Sidebar';
 import { RightSidebar } from './components/RightSidebar';
 import { BottomNav } from './components/BottomNav';
 
+import { useAuth } from './context/AuthContext';
 import { FeedPage } from './pages/FeedPage';
 import { SuggestionsPage } from './pages/SuggestionsPage';
 import { NetworkPage } from './pages/NetworkPage';
 import { DiscoverPage } from './pages/DiscoverPage';
 import { CommunitiesPage } from './pages/CommunitiesPage';
-import { AnalyticsPage } from './pages/AnalyticsPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { AlgorithmLabPage } from './pages/AlgorithmLabPage';
 import { RequestsPage } from './pages/RequestsPage';
 
 function AppLayout() {
+  const { loading } = useAuth();
   const location = useLocation();
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-bg flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-12 h-12 rounded-xl bg-teal-primary text-surface flex items-center justify-center font-black text-xl animate-pulse shadow-md">
+            FS
+          </div>
+          <p className="text-sm font-medium text-text-secondary">Loading FriendSphere...</p>
+        </div>
+      </div>
+    );
+  }
+
   // Pages where the 3-column right sidebar is rendered
-  const showRightSidebar = ['/', '/discover', '/suggestions'].includes(location.pathname);
+  const showRightSidebar = ['/'].includes(location.pathname);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-brand-500 selection:text-slate-950 pb-16 lg:pb-0">
+    <div className="min-h-screen bg-bg text-text-primary flex flex-col selection:bg-teal-primary selection:text-surface pb-16 lg:pb-0">
       <Navbar />
       
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -40,7 +54,6 @@ function AppLayout() {
               <Route path="/network" element={<NetworkPage />} />
               <Route path="/discover" element={<DiscoverPage />} />
               <Route path="/communities" element={<CommunitiesPage />} />
-              <Route path="/analytics" element={<AnalyticsPage />} />
               <Route path="/lab" element={<AlgorithmLabPage />} />
               <Route path="/requests" element={<RequestsPage />} />
               <Route path="/profile/:id" element={<ProfilePage />} />

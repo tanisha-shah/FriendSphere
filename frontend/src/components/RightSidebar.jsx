@@ -81,19 +81,19 @@ export const RightSidebar = () => {
     <aside className="w-80 shrink-0 hidden xl:block space-y-5">
       
       {/* People You May Know */}
-      <div className="glow-card rounded-3xl p-4 space-y-3.5">
+      <div className="glow-card rounded-xl p-4 space-y-3.5">
         <div className="flex items-center justify-between">
-          <h3 className="text-xs font-bold text-slate-100 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-brand-400" />
+          <h3 className="text-xs font-bold text-text-primary flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-teal-dark" />
             <span>People You May Know</span>
           </h3>
-          <Link to="/suggestions" className="text-[11px] font-semibold text-brand-400 hover:text-brand-300">
+          <Link to="/suggestions" className="text-[11px] font-semibold text-teal-dark hover:text-teal-primary">
             See All
           </Link>
         </div>
 
         {actionSuccess && (
-          <div className="p-2 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-[11px] text-emerald-400 flex items-center gap-1.5">
+          <div className="p-2 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-[11px] text-teal-dark flex items-center gap-1.5">
             <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
             <span>{actionSuccess}</span>
           </div>
@@ -109,17 +109,17 @@ export const RightSidebar = () => {
                     <img
                       src={user.avatar}
                       alt={user.name}
-                      className="w-10 h-10 rounded-2xl object-cover border border-slate-700 hover:border-brand-500 transition-colors shrink-0"
+                      className="w-10 h-10 rounded-lg object-cover border border-border-subtle hover:border-teal-primary transition-colors shrink-0"
                     />
                   </Link>
                   <div className="min-w-0">
                     <Link
                       to={`/profile/${user.id}`}
-                      className="text-xs font-bold text-slate-200 hover:text-brand-400 truncate block"
+                      className="text-xs font-bold text-text-primary hover:text-teal-dark truncate block"
                     >
                       {user.name}
                     </Link>
-                    <p className="text-[10px] text-brand-400 truncate">
+                    <p className="text-[10px] text-teal-dark truncate">
                       {cand.mutualFriendsCount > 0 ? `${cand.mutualFriendsCount} mutual friends` : user.college || user.location}
                     </p>
                   </div>
@@ -128,14 +128,14 @@ export const RightSidebar = () => {
                 <div className="flex items-center gap-1 shrink-0">
                   <button
                     onClick={() => openWhyModal(cand)}
-                    className="p-1.5 rounded-lg text-slate-400 hover:text-brand-300 hover:bg-slate-800 transition-colors"
+                    className="p-1.5 rounded-lg text-text-secondary hover:text-teal-primary hover:bg-surface transition-colors"
                     title="Why am I seeing this?"
                   >
                     <HelpCircle className="w-3.5 h-3.5" />
                   </button>
                   <button
                     onClick={() => handleConnect(cand.userId)}
-                    className="px-2.5 py-1 rounded-xl bg-brand-500/10 hover:bg-brand-500 hover:text-slate-950 text-brand-400 border border-brand-500/30 text-[11px] font-bold transition-all"
+                    className="px-2.5 py-1 rounded-xl bg-seafoam hover:bg-teal-primary hover:text-surface text-teal-dark border border-teal-primary/30 text-[11px] font-bold transition-all"
                   >
                     Connect
                   </button>
@@ -147,13 +147,13 @@ export const RightSidebar = () => {
       </div>
 
       {/* Trending Communities */}
-      <div className="glow-card rounded-3xl p-4 space-y-3">
+      <div className="glow-card rounded-xl p-4 space-y-3">
         <div className="flex items-center justify-between">
-          <h3 className="text-xs font-bold text-slate-100 flex items-center gap-1.5">
-            <Layers className="w-3.5 h-3.5 text-indigo-400" />
+          <h3 className="text-xs font-bold text-text-primary flex items-center gap-1.5">
+            <Layers className="w-3.5 h-3.5 text-teal-dark" />
             <span>Trending Communities</span>
           </h3>
-          <Link to="/communities" className="text-[11px] font-semibold text-brand-400 hover:text-brand-300">
+          <Link to="/communities" className="text-[11px] font-semibold text-teal-dark hover:text-teal-primary">
             Explore
           </Link>
         </div>
@@ -163,14 +163,14 @@ export const RightSidebar = () => {
             <Link
               key={c.id}
               to="/communities"
-              className="p-2.5 rounded-2xl bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 flex items-center gap-3 transition-colors group block"
+              className="p-2.5 rounded-lg bg-surface hover:bg-surface border border-border-subtle flex items-center gap-3 transition-colors group block"
             >
               <img src={c.avatar} alt={c.name} className="w-9 h-9 rounded-xl object-cover" />
               <div className="flex-1 min-w-0">
-                <h4 className="text-xs font-bold text-slate-200 group-hover:text-brand-300 truncate">
+                <h4 className="text-xs font-bold text-text-primary group-hover:text-teal-primary truncate">
                   {c.name}
                 </h4>
-                <p className="text-[10px] text-slate-400">
+                <p className="text-[10px] text-text-secondary">
                   {c.memberIds?.length || 12} members • {c.category}
                 </p>
               </div>
@@ -179,60 +179,7 @@ export const RightSidebar = () => {
         </div>
       </div>
 
-      {/* Upcoming Events */}
-      <div className="glow-card rounded-3xl p-4 space-y-3">
-        <div className="flex items-center justify-between">
-          <h3 className="text-xs font-bold text-slate-100 flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-amber-400" />
-            <span>Upcoming Events</span>
-          </h3>
-        </div>
 
-        <div className="space-y-2.5">
-          {events.map((ev) => (
-            <div key={ev.id} className="p-3 rounded-2xl bg-slate-850/60 border border-slate-800 flex items-start gap-3">
-              <div className="p-2 rounded-xl bg-slate-800 text-center shrink-0 w-12">
-                <span className="block text-[9px] font-bold text-brand-400 leading-none">{ev.date.split(' ')[0]}</span>
-                <span className="block text-sm font-black text-slate-100 font-mono leading-tight">{ev.date.split(' ')[1]}</span>
-              </div>
-              <div className="min-w-0 flex-1">
-                <h4 className="text-xs font-bold text-slate-200 truncate">{ev.title}</h4>
-                <p className="text-[10px] text-slate-400">{ev.time} • {ev.attendees} attending</p>
-                <span className="inline-block mt-1 text-[9px] px-1.5 py-0.2 rounded bg-slate-800 text-slate-300 font-mono">
-                  {ev.tag}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Online Connections */}
-      <div className="glow-card rounded-3xl p-4 space-y-3">
-        <h3 className="text-xs font-bold text-slate-100 flex items-center gap-1.5">
-          <Users className="w-3.5 h-3.5 text-emerald-400" />
-          <span>Active In Your Circle</span>
-        </h3>
-
-        <div className="space-y-2">
-          {onlineUsers.map((u) => (
-            <Link
-              key={u.id}
-              to={`/profile/${u.id}`}
-              className="flex items-center gap-2.5 p-1.5 rounded-xl hover:bg-slate-800 transition-colors"
-            >
-              <div className="relative">
-                <img src={u.avatar} alt={u.name} className="w-7 h-7 rounded-full object-cover" />
-                <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-slate-900" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <span className="text-xs font-medium text-slate-200 truncate block">{u.name}</span>
-                <span className="text-[10px] text-slate-500 truncate block">{u.headline || u.location}</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </div>
 
       {/* Why Explanation Modal */}
       {selectedCandidate && (

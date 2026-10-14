@@ -61,7 +61,7 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
   };
 
   return (
-    <div className="glow-card rounded-3xl p-5 space-y-4 shadow-sm border border-slate-800">
+    <div className="glow-card rounded-xl p-5 space-y-4 shadow-sm border border-border-subtle">
       
       {/* Top Input Row */}
       <div className="flex items-center gap-3">
@@ -69,7 +69,7 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
           <img
             src={currentUser.avatar}
             alt={currentUser.name}
-            className="w-10 h-10 rounded-2xl object-cover border border-brand-500/30 shrink-0"
+            className="w-10 h-10 rounded-lg object-cover border border-teal-primary/30 shrink-0"
           />
         )}
         <input
@@ -77,16 +77,16 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
           value={content}
           onChange={(e) => setContent(e.target.value)}
           placeholder={currentUser ? `What's on your mind, ${currentUser.name.split(' ')[0]}?` : "What's on your mind?"}
-          className="flex-1 bg-slate-850 text-sm text-slate-100 placeholder-slate-400 rounded-2xl px-4 py-2.5 border border-slate-700/80 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all"
+          className="flex-1 bg-surface-sec text-sm text-text-primary placeholder-slate-400 rounded-lg px-4 py-2.5 border border-border-subtle/80 focus:outline-none focus:border-teal-primary focus:ring-1 focus:ring-brand-500 transition-all"
         />
       </div>
 
       {/* Conditional Media / Poll Expansion */}
       {postType === 'photo' && (
-        <div className="p-3.5 rounded-2xl bg-slate-850/80 border border-slate-700 space-y-2 animate-in fade-in duration-150">
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-300">
+        <div className="p-3.5 rounded-lg bg-surface-sec border border-border-subtle space-y-2 animate-in fade-in duration-150">
+          <div className="flex items-center justify-between text-xs font-semibold text-text-secondary">
             <span>Attach Image URL or select sample:</span>
-            <button onClick={() => setPostType('standard')} className="text-slate-400 hover:text-white">
+            <button onClick={() => setPostType('standard')} className="text-text-secondary hover:text-text-primary">
               <X className="w-4 h-4" />
             </button>
           </div>
@@ -95,7 +95,7 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
             placeholder="Paste image link (e.g. https://...)..."
-            className="w-full bg-slate-900 text-xs text-slate-100 rounded-xl px-3 py-2 border border-slate-700 focus:outline-none focus:border-brand-500"
+            className="w-full bg-surface-sec text-xs text-text-primary rounded-xl px-3 py-2 border border-border-subtle focus:outline-none focus:border-teal-primary"
           />
           <div className="flex gap-2 pt-1">
             {samplePhotos.map((url, i) => (
@@ -114,10 +114,10 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
       )}
 
       {postType === 'poll' && (
-        <div className="p-3.5 rounded-2xl bg-slate-850/80 border border-slate-700 space-y-2.5 animate-in fade-in duration-150">
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-300">
+        <div className="p-3.5 rounded-lg bg-surface-sec border border-border-subtle space-y-2.5 animate-in fade-in duration-150">
+          <div className="flex items-center justify-between text-xs font-semibold text-text-secondary">
             <span>Create Poll Options:</span>
-            <button onClick={() => setPostType('standard')} className="text-slate-400 hover:text-white">
+            <button onClick={() => setPostType('standard')} className="text-text-secondary hover:text-text-primary">
               <X className="w-4 h-4" />
             </button>
           </div>
@@ -132,7 +132,7 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
                 next[idx] = e.target.value;
                 setPollOptions(next);
               }}
-              className="w-full bg-slate-900 text-xs text-slate-100 rounded-xl px-3 py-2 border border-slate-700"
+              className="w-full bg-surface-sec text-xs text-text-primary rounded-xl px-3 py-2 border border-border-subtle"
             />
           ))}
         </div>
@@ -144,10 +144,10 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
           {selectedTags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-0.5 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-mono border border-brand-500/30 flex items-center gap-1"
+              className="px-2.5 py-0.5 rounded-lg bg-seafoam text-teal-dark text-xs font-mono border border-teal-primary/30 flex items-center gap-1"
             >
               #{tag}
-              <button onClick={() => toggleTag(tag)} className="hover:text-white">
+              <button onClick={() => toggleTag(tag)} className="hover:text-text-primary">
                 <X className="w-3 h-3" />
               </button>
             </span>
@@ -157,8 +157,8 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
 
       {/* Tag Selector Drawer */}
       {showTagSelector && (
-        <div className="p-3 bg-slate-850 rounded-2xl border border-slate-800 space-y-2 animate-in fade-in">
-          <span className="text-[11px] font-semibold text-slate-400">Select topics to tag in your post:</span>
+        <div className="p-3 bg-surface-sec rounded-lg border border-border-subtle space-y-2 animate-in fade-in">
+          <span className="text-[11px] font-semibold text-text-secondary">Select topics to tag in your post:</span>
           <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto">
             {availableInterests.map((interest) => (
               <button
@@ -167,8 +167,8 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
                 onClick={() => toggleTag(interest.id)}
                 className={`px-2.5 py-1 rounded-xl text-xs font-medium transition-all ${
                   selectedTags.includes(interest.id)
-                    ? 'bg-brand-500 text-slate-950 font-bold'
-                    : 'bg-slate-800 text-slate-300 hover:bg-slate-750'
+                    ? 'bg-teal-primary text-surface font-bold'
+                    : 'bg-surface text-text-secondary hover:bg-surface-hov'
                 }`}
               >
                 #{interest.name}
@@ -186,10 +186,10 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
             type="button"
             onClick={() => setPostType(postType === 'photo' ? 'standard' : 'photo')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-medium transition-colors ${
-              postType === 'photo' ? 'bg-emerald-500/10 text-emerald-400' : 'text-slate-400 hover:text-emerald-400 hover:bg-slate-800'
+              postType === 'photo' ? 'bg-emerald-500/10 text-teal-dark' : 'text-text-secondary hover:text-teal-dark hover:bg-surface'
             }`}
           >
-            <Image className="w-4 h-4 text-emerald-400" />
+            <Image className="w-4 h-4 text-teal-dark" />
             <span className="hidden sm:inline">Photo</span>
           </button>
 
@@ -197,7 +197,7 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
             type="button"
             onClick={() => setPostType(postType === 'video' ? 'standard' : 'video')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-medium transition-colors ${
-              postType === 'video' ? 'bg-blue-500/10 text-blue-400' : 'text-slate-400 hover:text-blue-400 hover:bg-slate-800'
+              postType === 'video' ? 'bg-blue-500/10 text-blue-400' : 'text-text-secondary hover:text-blue-400 hover:bg-surface'
             }`}
           >
             <Video className="w-4 h-4 text-blue-400" />
@@ -208,10 +208,10 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
             type="button"
             onClick={() => setPostType(postType === 'event' ? 'standard' : 'event')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-medium transition-colors ${
-              postType === 'event' ? 'bg-amber-500/10 text-amber-400' : 'text-slate-400 hover:text-amber-400 hover:bg-slate-800'
+              postType === 'event' ? 'bg-amber-500/10 text-text-secondary' : 'text-text-secondary hover:text-text-secondary hover:bg-surface'
             }`}
           >
-            <Calendar className="w-4 h-4 text-amber-400" />
+            <Calendar className="w-4 h-4 text-text-secondary" />
             <span className="hidden sm:inline">Event</span>
           </button>
 
@@ -219,19 +219,19 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
             type="button"
             onClick={() => setPostType(postType === 'poll' ? 'standard' : 'poll')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-medium transition-colors ${
-              postType === 'poll' ? 'bg-purple-500/10 text-purple-400' : 'text-slate-400 hover:text-purple-400 hover:bg-slate-800'
+              postType === 'poll' ? 'bg-purple-500/10 text-teal-dark' : 'text-text-secondary hover:text-teal-dark hover:bg-surface'
             }`}
           >
-            <BarChart2 className="w-4 h-4 text-purple-400" />
+            <BarChart2 className="w-4 h-4 text-teal-dark" />
             <span className="hidden sm:inline">Poll</span>
           </button>
 
           <button
             type="button"
             onClick={() => setShowTagSelector(!showTagSelector)}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-slate-400 hover:text-brand-400 hover:bg-slate-800 font-medium transition-colors"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-text-secondary hover:text-teal-dark hover:bg-surface font-medium transition-colors"
           >
-            <Tag className="w-4 h-4 text-brand-400" />
+            <Tag className="w-4 h-4 text-teal-dark" />
           </button>
 
         </div>
@@ -239,7 +239,7 @@ export const CreatePostBox = ({ onPostCreated, availableInterests = [] }) => {
         <button
           onClick={handleSubmit}
           disabled={submitting || !content.trim()}
-          className="px-5 py-2 rounded-2xl bg-gradient-to-r from-brand-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 disabled:opacity-40 text-slate-950 font-bold text-xs transition-all shadow-md shadow-brand-500/20 flex items-center gap-1.5"
+          className="px-5 py-2 rounded-lg bg-teal-primary hover:bg-teal-primary hover:disabled:opacity-40 text-surface font-bold text-xs transition-all shadow-md shadow-sm flex items-center gap-1.5"
         >
           <Send className="w-3.5 h-3.5" />
           <span>Post</span>

@@ -17,6 +17,7 @@ import {
   Layers
 } from 'lucide-react';
 import { AlgorithmBadge } from './AlgorithmBadge';
+import { UserAvatar } from '../pages/SuggestionsPage';
 
 export const WhyExplanationModal = ({
   isOpen,
@@ -60,27 +61,27 @@ export const WhyExplanationModal = ({
   const communityName = candidate.communityName || "Technology Cluster";
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
-      <div className="relative w-full max-w-lg bg-slate-900 border border-slate-700/80 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-bg  flex items-center justify-center p-4">
+      <div className="relative w-full max-w-lg bg-surface-sec border border-border-subtle/80 rounded-xl shadow-md overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         
         {/* Header */}
-        <div className="p-6 bg-gradient-to-r from-slate-900 via-slate-850 to-slate-900 border-b border-slate-800 flex items-center justify-between">
+        <div className="p-6 from-slate-900 border-b border-border-subtle flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl bg-brand-500/10 border border-brand-500/30 flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-brand-400" />
+            <div className="w-10 h-10 rounded-lg bg-seafoam border border-teal-primary/30 flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-teal-dark" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-slate-100">
+              <h2 className="text-base font-bold text-text-primary">
                 Why am I seeing this?
               </h2>
-              <p className="text-xs text-slate-400">
+              <p className="text-xs text-text-secondary">
                 Transparent multi-signal AI ranking powered by C++
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-400 hover:text-white transition-colors"
+            className="p-2 rounded-xl bg-surface hover:bg-surface-hov text-text-secondary hover:text-text-primary transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -90,42 +91,38 @@ export const WhyExplanationModal = ({
         <div className="p-6 space-y-5 max-h-[75vh] overflow-y-auto">
           
           {/* User Profile Mini Snapshot */}
-          <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-850/80 border border-slate-800">
+          <div className="flex items-center justify-between p-4 rounded-xl bg-surface-sec border border-border-subtle">
             <div className="flex items-center gap-3.5">
-              <img
-                src={user.avatar}
-                alt={user.name}
-                className="w-12 h-12 rounded-2xl object-cover border border-brand-500/40 shadow"
-              />
+              <UserAvatar name={user.name} id={user.id} size="md" />
               <div>
-                <h3 className="text-sm font-bold text-slate-100">{user.name}</h3>
-                <p className="text-xs text-brand-400 font-medium">@{user.username} • {collegeName || user.location}</p>
+                <h3 className="text-sm font-bold text-text-primary">{user.name}</h3>
+                <p className="text-xs text-text-secondary font-medium">@{user.username} • {collegeName || user.location}</p>
               </div>
             </div>
 
             <div className="text-right">
-              <div className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Score</div>
-              <div className="text-2xl font-black text-brand-400 font-mono">{scorePercent}%</div>
+              <div className="text-[10px] uppercase font-bold text-text-secondary tracking-wider">Score</div>
+              <div className="text-2xl font-black text-teal-dark font-mono">{scorePercent}%</div>
             </div>
           </div>
 
           {/* Social Media Friendly "WHY [NAME]?" Section */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-brand-300 flex items-center gap-1.5">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-teal-primary flex items-center gap-1.5">
               <span>Recommended Because:</span>
             </h4>
 
-            <div className="space-y-2.5 bg-slate-800/40 p-4 rounded-2xl border border-slate-800">
+            <div className="space-y-2.5 bg-surface p-4 rounded-lg border border-border-subtle">
               
               {/* Mutual Friends */}
-              <div className="flex items-start gap-2.5 text-xs text-slate-200">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-xs text-text-primary">
+                <CheckCircle className="w-4 h-4 text-teal-dark shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-slate-100">
+                  <span className="font-semibold text-text-primary">
                     {mutualCount > 0 ? `${mutualCount} mutual friends` : 'Active member in network'}
                   </span>
                   {explanation?.mutualFriends?.length > 0 && (
-                    <span className="text-slate-400 ml-1">
+                    <span className="text-text-secondary ml-1">
                       (including {explanation.mutualFriends.map(m => m.name.split(' ')[0]).slice(0, 3).join(', ')})
                     </span>
                   )}
@@ -133,26 +130,42 @@ export const WhyExplanationModal = ({
               </div>
 
               {/* Profile Similarity (Cosine) */}
-              <div className="flex items-start gap-2.5 text-xs text-slate-200">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-xs text-text-primary">
+                <CheckCircle className="w-4 h-4 text-teal-dark shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-slate-100">
+                  <span className="font-semibold text-text-primary">
                     {profileMatch}% profile similarity
                   </span>
-                  <span className="text-slate-400 ml-1">(Cosine feature angle)</span>
+                  <span className="text-text-secondary ml-1">(Cosine feature angle)</span>
                 </div>
               </div>
 
               {/* Shared Interests (Jaccard) */}
-              <div className="flex items-start gap-2.5 text-xs text-slate-200">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-xs text-text-primary">
+                <CheckCircle className="w-4 h-4 text-teal-dark shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-slate-100">
+                  <span className="font-semibold text-text-primary">
                     {interestMatch}% shared interests
                   </span>
                   {candidate.sharedInterests?.length > 0 && (
-                    <span className="text-slate-400 ml-1">
-                      in {candidate.sharedInterests.slice(0, 3).join(', ')}
+                    <span className="text-text-secondary ml-1">
+                      in {candidate.sharedInterests.slice(0, 3).map(tag => {
+                        const map = {
+                          ai_ml: 'AI & ML',
+                          competitive_prog: 'Competitive Programming',
+                          web_dev: 'Web Development',
+                          open_source: 'Open Source',
+                          algorithms: 'Algorithms',
+                          data_science: 'Data Science',
+                          cybersec: 'Cybersecurity',
+                          game_dev: 'Game Development',
+                          cloud_comp: 'Cloud Computing',
+                          blockchain: 'Blockchain',
+                          robotics: 'Robotics',
+                          quantum_comp: 'Quantum Computing'
+                        };
+                        return map[tag] || tag.replace(/_/g, ' ');
+                      }).join(', ')}
                     </span>
                   )}
                 </div>
@@ -160,10 +173,10 @@ export const WhyExplanationModal = ({
 
               {/* College */}
               {sameCollege && collegeName && (
-                <div className="flex items-start gap-2.5 text-xs text-slate-200">
-                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-text-primary">
+                  <CheckCircle className="w-4 h-4 text-teal-dark shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-slate-100">
+                    <span className="font-semibold text-text-primary">
                       Same university: {collegeName}
                     </span>
                   </div>
@@ -172,10 +185,10 @@ export const WhyExplanationModal = ({
 
               {/* Shared Community */}
               {sharedCommunity && (
-                <div className="flex items-start gap-2.5 text-xs text-slate-200">
-                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs text-text-primary">
+                  <CheckCircle className="w-4 h-4 text-teal-dark shrink-0 mt-0.5" />
                   <div>
-                    <span className="font-semibold text-slate-100">
+                    <span className="font-semibold text-text-primary">
                       Shared community: {communityName}
                     </span>
                   </div>
@@ -183,13 +196,13 @@ export const WhyExplanationModal = ({
               )}
 
               {/* Network Distance (Hops) */}
-              <div className="flex items-start gap-2.5 text-xs text-slate-200">
-                <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-xs text-text-primary">
+                <CheckCircle className="w-4 h-4 text-teal-dark shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-slate-100">
+                  <span className="font-semibold text-text-primary">
                     {hops} connections away
                   </span>
-                  <span className="text-slate-400 ml-1">in your social network graph</span>
+                  <span className="text-text-secondary ml-1">in your social network graph</span>
                 </div>
               </div>
 
@@ -197,33 +210,33 @@ export const WhyExplanationModal = ({
           </div>
 
           {/* Collapsible Technical Details (C++ Algorithmic Core) */}
-          <div className="border-t border-slate-800 pt-3">
+          <div className="border-t border-border-subtle pt-3">
             <button
               onClick={() => setShowTechnicalDetails(!showTechnicalDetails)}
-              className="w-full flex items-center justify-between text-xs text-slate-400 hover:text-slate-200 font-medium transition-colors py-1"
+              className="w-full flex items-center justify-between text-xs text-text-secondary hover:text-text-primary font-medium transition-colors py-1"
             >
               <span>DAA Computation Pipeline (C++ Engine)</span>
               {showTechnicalDetails ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
             </button>
 
             {showTechnicalDetails && (
-              <div className="mt-3 p-4 rounded-2xl bg-slate-950/70 border border-slate-800 space-y-3 animate-in fade-in duration-150 text-xs">
+              <div className="mt-3 p-4 rounded-lg bg-bg border border-border-subtle space-y-3 animate-in fade-in duration-150 text-xs">
                 <div className="grid grid-cols-2 gap-2 text-[11px] font-mono">
-                  <div className="p-2 rounded-xl bg-slate-900 border border-slate-800">
-                    <div className="text-slate-400">BFS Hops</div>
-                    <div className="text-brand-400 font-bold">{hops} (Degree {hops})</div>
+                  <div className="p-2 rounded-xl bg-surface-sec border border-border-subtle">
+                    <div className="text-text-secondary">BFS Hops</div>
+                    <div className="text-teal-dark font-bold">{hops} (Degree {hops})</div>
                   </div>
-                  <div className="p-2 rounded-xl bg-slate-900 border border-slate-800">
-                    <div className="text-slate-400">Jaccard Index</div>
-                    <div className="text-emerald-400 font-bold">{candidate.jaccardSimilarity || (interestMatch / 100)}</div>
+                  <div className="p-2 rounded-xl bg-surface-sec border border-border-subtle">
+                    <div className="text-text-secondary">Jaccard Index</div>
+                    <div className="text-teal-dark font-bold">{candidate.jaccardSimilarity || (interestMatch / 100)}</div>
                   </div>
-                  <div className="p-2 rounded-xl bg-slate-900 border border-slate-800">
-                    <div className="text-slate-400">Cosine Score</div>
-                    <div className="text-teal-400 font-bold">{candidate.cosineSimilarity || (profileMatch / 100)}</div>
+                  <div className="p-2 rounded-xl bg-surface-sec border border-border-subtle">
+                    <div className="text-text-secondary">Cosine Score</div>
+                    <div className="text-teal-dark font-bold">{candidate.cosineSimilarity || (profileMatch / 100)}</div>
                   </div>
-                  <div className="p-2 rounded-xl bg-slate-900 border border-slate-800">
-                    <div className="text-slate-400">Max Priority Queue</div>
-                    <div className="text-purple-400 font-bold">Extracted Top-K</div>
+                  <div className="p-2 rounded-xl bg-surface-sec border border-border-subtle">
+                    <div className="text-text-secondary">Max Priority Queue</div>
+                    <div className="text-teal-dark font-bold">Extracted Top-K</div>
                   </div>
                 </div>
 
@@ -242,10 +255,10 @@ export const WhyExplanationModal = ({
         </div>
 
         {/* Footer Actions */}
-        <div className="p-4 bg-slate-850 border-t border-slate-800 flex items-center justify-end gap-2.5">
+        <div className="p-4 bg-surface-sec border-t border-border-subtle flex items-center justify-end gap-2.5">
           <button
             onClick={onClose}
-            className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-slate-800 transition-colors"
+            className="px-4 py-2 rounded-xl text-xs font-semibold text-text-secondary hover:bg-surface transition-colors"
           >
             Dismiss
           </button>
@@ -254,10 +267,10 @@ export const WhyExplanationModal = ({
               if (onConnect) onConnect(candidate.userId);
               onClose();
             }}
-            className="px-5 py-2 rounded-xl bg-gradient-to-r from-brand-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-brand-500/20 flex items-center gap-1.5"
+            className="px-4 py-2 rounded-xl bg-teal-primary hover:bg-teal-dark text-white font-semibold text-xs transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
           >
-            <UserPlus className="w-4 h-4" />
-            <span>Add Friend</span>
+            <UserPlus className="w-3.5 h-3.5" />
+            <span>Connect</span>
           </button>
         </div>
 

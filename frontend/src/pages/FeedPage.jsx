@@ -114,7 +114,7 @@ export const FeedPage = () => {
       />
 
       {shareNotice && (
-        <div className="p-3 bg-brand-500/10 border border-brand-500/30 rounded-2xl text-xs text-brand-400 flex items-center gap-2">
+        <div className="p-3 bg-seafoam border border-teal-primary/30 rounded-lg text-xs text-teal-dark flex items-center gap-2">
           <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{shareNotice}</span>
         </div>
@@ -125,7 +125,7 @@ export const FeedPage = () => {
         {loading ? (
           <div className="space-y-4">
             {[...Array(3)].map((_, i) => (
-              <div key={i} className="glow-card rounded-3xl p-6 h-64 animate-pulse bg-slate-900" />
+              <div key={i} className="glow-card rounded-xl p-6 h-64 animate-pulse bg-surface-sec" />
             ))}
           </div>
         ) : feed.length > 0 ? (
@@ -138,7 +138,7 @@ export const FeedPage = () => {
             return (
               <article
                 key={post.id}
-                className="glow-card rounded-3xl p-5 sm:p-6 space-y-4 shadow-sm border border-slate-800 transition-all hover:border-slate-700/80"
+                className="glow-card rounded-xl p-5 sm:p-6 space-y-4 shadow-sm border border-border-subtle transition-all hover:border-border-subtle/80"
               >
                 {/* Author Info */}
                 <div className="flex items-center justify-between">
@@ -147,38 +147,38 @@ export const FeedPage = () => {
                       <img
                         src={author.avatar}
                         alt={author.name}
-                        className="w-11 h-11 rounded-2xl object-cover border border-slate-700 hover:border-brand-500 transition-colors"
+                        className="w-11 h-11 rounded-lg object-cover border border-border-subtle hover:border-teal-primary transition-colors"
                       />
                     </Link>
                     <div>
                       <Link
                         to={`/profile/${author.id}`}
-                        className="text-sm font-bold text-slate-100 hover:text-brand-300 transition-colors flex items-center gap-1.5"
+                        className="text-sm font-bold text-text-primary hover:text-teal-primary transition-colors flex items-center gap-1.5"
                       >
                         <span>{author.name}</span>
                         {author.activityScore > 85 && (
                           <span className="w-2 h-2 rounded-full bg-brand-400" title="Active Contributor" />
                         )}
                       </Link>
-                      <p className="text-xs text-slate-400">
-                        {author.college || author.headline || author.location} • <span className="text-slate-500">{post.createdAt}</span>
+                      <p className="text-xs text-text-secondary">
+                        {author.college || author.headline || author.location} • <span className="text-surface0">{post.createdAt}</span>
                       </p>
                     </div>
                   </div>
 
-                  <button className="p-1.5 rounded-xl text-slate-500 hover:text-slate-200 hover:bg-slate-800 transition-colors">
+                  <button className="p-1.5 rounded-xl text-surface0 hover:text-text-primary hover:bg-surface transition-colors">
                     <MoreHorizontal className="w-4 h-4" />
                   </button>
                 </div>
 
                 {/* Post Text Content */}
-                <p className="text-sm text-slate-200 leading-relaxed whitespace-pre-line">
+                <p className="text-sm text-text-primary leading-relaxed whitespace-pre-line">
                   {post.content}
                 </p>
 
                 {/* Attached Image if available */}
                 {post.imageUrl && (
-                  <div className="rounded-2xl overflow-hidden border border-slate-800 max-h-96 bg-slate-950">
+                  <div className="rounded-lg overflow-hidden border border-border-subtle max-h-96 bg-bg">
                     <img
                       src={post.imageUrl}
                       alt="Post visual"
@@ -193,7 +193,7 @@ export const FeedPage = () => {
                     {post.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="px-2.5 py-0.5 rounded-lg bg-slate-850 text-brand-400 text-xs font-medium border border-slate-800"
+                        className="px-2.5 py-0.5 rounded-lg bg-surface-sec text-teal-dark text-xs font-medium border border-border-subtle"
                       >
                         #{tag}
                       </span>
@@ -202,18 +202,18 @@ export const FeedPage = () => {
                 )}
 
                 {/* Post Footer Actions: Like, Comment, Share, Save */}
-                <div className="flex items-center justify-between pt-3 border-t border-slate-850 text-xs text-slate-400">
+                <div className="flex items-center justify-between pt-3 border-t border-slate-850 text-xs text-text-secondary">
                   <div className="flex items-center gap-6">
                     
                     {/* Like */}
                     <button
                       onClick={() => handleLike(post.id)}
                       className={`flex items-center gap-1.5 transition-colors group ${
-                        isLiked ? 'text-rose-500 font-bold' : 'hover:text-rose-400'
+                        isLiked ? 'text-text-secondary font-bold' : 'hover:text-text-secondary'
                       }`}
                     >
                       <Heart className={`w-4 h-4 transition-transform group-hover:scale-125 ${
-                        isLiked ? 'fill-rose-500 text-rose-500' : ''
+                        isLiked ? 'fill-rose-500 text-text-secondary' : ''
                       }`} />
                       <span className="font-mono">{post.likes}</span>
                     </button>
@@ -221,7 +221,7 @@ export const FeedPage = () => {
                     {/* Comment */}
                     <button
                       onClick={() => setActiveCommentPostId(isCommentsOpen ? null : post.id)}
-                      className="flex items-center gap-1.5 hover:text-brand-400 transition-colors group"
+                      className="flex items-center gap-1.5 hover:text-teal-dark transition-colors group"
                     >
                       <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
                       <span className="font-mono">{post.comments?.length || 0}</span>
@@ -242,7 +242,7 @@ export const FeedPage = () => {
                   <button
                     onClick={() => handleBookmark(post.id)}
                     className={`transition-colors ${
-                      isSaved ? 'text-amber-400' : 'hover:text-amber-400'
+                      isSaved ? 'text-text-secondary' : 'hover:text-text-secondary'
                     }`}
                   >
                     <Bookmark className={`w-4 h-4 ${isSaved ? 'fill-amber-400' : ''}`} />
@@ -251,14 +251,14 @@ export const FeedPage = () => {
 
                 {/* Comments Thread */}
                 {isCommentsOpen && (
-                  <div className="pt-3 border-t border-slate-800 space-y-3 animate-in fade-in duration-150">
+                  <div className="pt-3 border-t border-border-subtle space-y-3 animate-in fade-in duration-150">
                     {post.comments?.map((comment) => (
-                      <div key={comment.id} className="p-3 rounded-2xl bg-slate-850/80 text-xs space-y-1">
-                        <div className="flex items-center justify-between text-slate-400 text-[10px]">
-                          <span className="font-semibold text-slate-300">Connection #{comment.authorId}</span>
+                      <div key={comment.id} className="p-3 rounded-lg bg-surface-sec text-xs space-y-1">
+                        <div className="flex items-center justify-between text-text-secondary text-[10px]">
+                          <span className="font-semibold text-text-secondary">Connection #{comment.authorId}</span>
                           <span>{comment.createdAt}</span>
                         </div>
-                        <p className="text-slate-200">{comment.content}</p>
+                        <p className="text-text-primary">{comment.content}</p>
                       </div>
                     ))}
 
@@ -268,14 +268,14 @@ export const FeedPage = () => {
                         value={commentText}
                         onChange={(e) => setCommentText(e.target.value)}
                         placeholder="Write a supportive reply..."
-                        className="flex-1 bg-slate-900 text-xs text-slate-100 placeholder-slate-400 rounded-xl px-3 py-2 border border-slate-700 focus:outline-none focus:border-brand-500"
+                        className="flex-1 bg-surface-sec text-xs text-text-primary placeholder-slate-400 rounded-xl px-3 py-2 border border-border-subtle focus:outline-none focus:border-teal-primary"
                         onKeyDown={(e) => {
                           if (e.key === 'Enter') handleAddComment(post.id);
                         }}
                       />
                       <button
                         onClick={() => handleAddComment(post.id)}
-                        className="px-3.5 py-2 rounded-xl bg-brand-500 text-slate-950 font-bold text-xs"
+                        className="px-3.5 py-2 rounded-xl bg-teal-primary text-surface font-bold text-xs"
                       >
                         Reply
                       </button>
@@ -287,7 +287,7 @@ export const FeedPage = () => {
             );
           })
         ) : (
-          <div className="glow-card rounded-3xl p-12 text-center text-xs text-slate-400">
+          <div className="glow-card rounded-xl p-12 text-center text-xs text-text-secondary">
             No posts found. Share your first discovery above!
           </div>
         )}

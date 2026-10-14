@@ -175,30 +175,30 @@ export const ForceGraphViewer = ({
   }, [data, highlightPath, highlightBridges, activeUserId, selectedNodeId]);
 
   return (
-    <div className="relative w-full h-full min-h-[500px] bg-slate-950 rounded-3xl overflow-hidden border border-slate-800" ref={containerRef}>
+    <div className="relative w-full h-full min-h-[500px] bg-bg rounded-xl overflow-hidden border border-border-subtle" ref={containerRef}>
       <svg ref={svgRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Floating Graph Legend & Controls */}
-      <div className="absolute top-4 left-4 p-3 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-800 text-xs space-y-2 shadow-xl">
-        <div className="font-bold text-slate-200 flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-brand-400" />
+      <div className="absolute top-4 left-4 p-3 rounded-lg bg-surface-sec  border border-border-subtle text-xs space-y-2 shadow-md">
+        <div className="font-bold text-text-primary flex items-center gap-1.5">
+          <Sparkles className="w-3.5 h-3.5 text-teal-dark" />
           <span>Interactive Social Graph</span>
         </div>
         <div className="space-y-1 text-[11px]">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-brand-400 border border-white"></span>
-            <span className="text-slate-300">Active User (You)</span>
+            <span className="text-text-secondary">Active User (You)</span>
           </div>
           {highlightPath.length > 0 && (
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-full bg-emerald-500"></span>
-              <span className="text-emerald-300 font-semibold">Dijkstra Shortest Path</span>
+              <span className="text-teal-dark font-semibold">Dijkstra Shortest Path</span>
             </div>
           )}
           {highlightBridges.length > 0 && (
             <div className="flex items-center gap-2">
               <span className="w-4 h-0.5 bg-rose-500 border-t border-dashed border-rose-400"></span>
-              <span className="text-rose-400 font-semibold">DFS Critical Bridge</span>
+              <span className="text-text-secondary font-semibold">DFS Critical Bridge</span>
             </div>
           )}
         </div>
@@ -206,19 +206,19 @@ export const ForceGraphViewer = ({
 
       {/* Node Tooltip on Hover */}
       {hoveredNode && (
-        <div className="absolute bottom-4 left-4 max-w-xs p-3.5 rounded-2xl bg-slate-900/95 backdrop-blur-md border border-brand-500/30 text-xs shadow-2xl animate-in fade-in-50 duration-100">
+        <div className="absolute bottom-4 left-4 max-w-xs p-3.5 rounded-lg bg-surface-sec  border border-teal-primary/30 text-xs shadow-md animate-in fade-in-50 duration-100">
           <div className="flex items-center gap-2.5 mb-1.5">
             {hoveredNode.avatar && (
               <img src={hoveredNode.avatar} alt={hoveredNode.name} className="w-7 h-7 rounded-full object-cover" />
             )}
             <div>
-              <div className="font-bold text-slate-100">{hoveredNode.name}</div>
-              <div className="text-[10px] text-brand-400">@{hoveredNode.username} • Node #{hoveredNode.id}</div>
+              <div className="font-bold text-text-primary">{hoveredNode.name}</div>
+              <div className="text-[10px] text-teal-dark">@{hoveredNode.username} • Node #{hoveredNode.id}</div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2 text-[10px] text-slate-300 pt-1.5 border-t border-slate-800">
-            <div>Degree: <span className="font-mono text-white font-bold">{hoveredNode.degree} friends</span></div>
-            <div>Clustering: <span className="font-mono text-brand-300 font-bold">{(hoveredNode.clusteringCoeff * 100).toFixed(0)}%</span></div>
+          <div className="grid grid-cols-2 gap-2 text-[10px] text-text-secondary pt-1.5 border-t border-border-subtle">
+            <div>Degree: <span className="font-mono text-surface font-bold">{hoveredNode.degree} friends</span></div>
+            <div>Clustering: <span className="font-mono text-teal-primary font-bold">{(hoveredNode.clusteringCoeff * 100).toFixed(0)}%</span></div>
           </div>
         </div>
       )}

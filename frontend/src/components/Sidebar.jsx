@@ -24,39 +24,37 @@ export const Sidebar = () => {
     { to: '/suggestions', label: 'Friend Suggestions', icon: Sparkles, badge: 'Smart' },
     { to: '/discover', label: 'Discover', icon: Compass },
     { to: '/communities', label: 'Communities', icon: Layers },
-    { to: '/analytics', label: 'Analytics', icon: BarChart3 },
     { to: '/lab', label: 'How FriendSphere Thinks', icon: Cpu, isLab: true },
   ];
 
   return (
-    <aside className="w-60 shrink-0 hidden lg:block">
-      <div className="sticky top-20 space-y-5">
+    <aside className="w-52 shrink-0 hidden lg:block">
+      <div className="sticky top-20 space-y-4">
         
         {/* User Profile Mini Snapshot */}
         {currentUser && (
-          <div className="glow-card rounded-3xl p-4 transition-all hover:border-brand-500/30">
-            <div className="flex items-center gap-3">
+          <div className="glow-card rounded-xl p-3 transition-all hover:border-teal-primary/30">
+            <div className="flex items-center gap-2.5">
               <img
                 src={currentUser.avatar}
                 alt={currentUser.name}
-                className="w-11 h-11 rounded-2xl object-cover border border-brand-500/40 shrink-0"
+                className="w-9 h-9 rounded-lg object-cover border border-teal-primary/40 shrink-0"
               />
               <div className="min-w-0 flex-1">
                 <NavLink
                   to={`/profile/${currentUser.id}`}
-                  className="text-xs font-bold text-slate-100 hover:text-brand-300 truncate block"
+                  className="text-xs font-bold text-text-primary hover:text-teal-primary truncate block"
                 >
                   {currentUser.name}
                 </NavLink>
-                <p className="text-[11px] text-brand-400 font-medium truncate">@{currentUser.username}</p>
-                <p className="text-[10px] text-slate-400 truncate mt-0.5">{currentUser.college || currentUser.location}</p>
+                <p className="text-[10px] text-teal-dark font-medium truncate">@{currentUser.username}</p>
               </div>
             </div>
           </div>
         )}
 
         {/* Primary Navigation Menu */}
-        <nav className="glow-card rounded-3xl p-2.5 space-y-1">
+        <nav className="glow-card rounded-xl p-2 space-y-0.5">
           {primaryNav.map((item) => {
             const Icon = item.icon;
             return (
@@ -64,12 +62,12 @@ export const Sidebar = () => {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-xs font-semibold transition-all ${
+                  `flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-all ${
                     isActive
-                      ? 'bg-gradient-to-r from-brand-600 to-teal-500 text-slate-950 font-bold shadow-md shadow-brand-500/20'
+                      ? 'bg-teal-primary text-surface font-bold shadow-xs'
                       : item.isLab
-                      ? 'text-teal-300 hover:bg-teal-950/40 hover:text-teal-200 border border-teal-500/20'
-                      : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
+                      ? 'text-teal-dark hover:bg-teal-950/40 hover:text-teal-dark border border-teal-500/20'
+                      : 'text-text-secondary hover:bg-surface hover:text-text-primary'
                   }`
                 }
               >
@@ -78,7 +76,7 @@ export const Sidebar = () => {
                   <span>{item.label}</span>
                 </div>
                 {item.badge && (
-                  <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-brand-400 text-slate-950">
+                  <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-brand-400 text-surface">
                     {item.badge}
                   </span>
                 )}
@@ -87,22 +85,7 @@ export const Sidebar = () => {
           })}
         </nav>
 
-        {/* Social Network Metric Snapshot */}
-        <div className="glow-card rounded-3xl p-4 bg-slate-900/60 border border-slate-800 space-y-3">
-          <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
-            Network Reach
-          </div>
-          <div className="grid grid-cols-2 gap-2 text-center">
-            <div className="p-2 rounded-xl bg-slate-800/60">
-              <span className="block text-base font-bold text-slate-100 font-mono">8</span>
-              <span className="text-[10px] text-slate-400">Direct Ties</span>
-            </div>
-            <div className="p-2 rounded-xl bg-slate-800/60">
-              <span className="block text-base font-bold text-brand-400 font-mono">34</span>
-              <span className="text-[10px] text-slate-400">2nd-Degree</span>
-            </div>
-          </div>
-        </div>
+
 
       </div>
     </aside>

@@ -21,7 +21,7 @@ export const BottomNav = () => {
   ];
 
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-4 py-2 flex items-center justify-around">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-sec  border-t border-border-subtle px-4 py-2 flex items-center justify-around">
       {navItems.map((item) => {
         const Icon = item.icon;
         return (
@@ -30,7 +30,7 @@ export const BottomNav = () => {
             to={item.to}
             className={({ isActive }) =>
               `flex flex-col items-center gap-1 p-2 rounded-xl transition-colors ${
-                isActive ? 'text-brand-400 font-bold' : 'text-slate-400 hover:text-slate-200'
+                isActive ? 'text-teal-dark font-bold' : 'text-text-secondary hover:text-text-primary'
               }`
             }
           >

@@ -71,11 +71,11 @@ export const PeoplePage = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 flex items-center gap-2.5">
-            <Users className="w-7 h-7 text-brand-400" />
+          <h1 className="text-2xl font-extrabold text-text-primary flex items-center gap-2.5">
+            <Users className="w-7 h-7 text-teal-dark" />
             <span>People & Network Directory</span>
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-xs text-text-secondary mt-1">
             Search 40+ members across algorithms, AI, systems, and creative circles powered by C++ Trie.
           </p>
         </div>
@@ -91,13 +91,13 @@ export const PeoplePage = () => {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search by prefix of name, username, skill, or interest..."
-            className="w-full bg-slate-900 text-sm text-slate-100 placeholder-slate-400 rounded-2xl pl-11 pr-4 py-3 border border-slate-700 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all"
+            className="w-full bg-surface-sec text-sm text-text-primary placeholder-slate-400 rounded-lg pl-11 pr-4 py-3 border border-border-subtle focus:outline-none focus:border-teal-primary focus:ring-1 focus:ring-brand-500 transition-all"
           />
-          <Search className="w-5 h-5 text-slate-400 absolute left-3.5 top-3.5" />
+          <Search className="w-5 h-5 text-text-secondary absolute left-3.5 top-3.5" />
         </div>
 
         {actionMsg && (
-          <div className="text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-2 rounded-xl flex items-center gap-2">
+          <div className="text-xs text-teal-dark bg-emerald-500/10 border border-emerald-500/30 px-3 py-2 rounded-xl flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4" />
             <span>{actionMsg}</span>
           </div>
@@ -108,7 +108,7 @@ export const PeoplePage = () => {
       {loading ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[...Array(6)].map((_, i) => (
-            <div key={i} className="glow-card rounded-3xl p-5 h-48 animate-pulse" />
+            <div key={i} className="glow-card rounded-xl p-5 h-48 animate-pulse" />
           ))}
         </div>
       ) : (
@@ -120,28 +120,28 @@ export const PeoplePage = () => {
             return (
               <div
                 key={user.id}
-                className="glow-card rounded-3xl p-5 flex flex-col justify-between transition-all hover:-translate-y-1 group"
+                className="glow-card rounded-xl p-5 flex flex-col justify-between transition-all hover:-translate-y-1 group"
               >
                 <div>
                   <div className="flex items-center gap-3.5 mb-3">
                     <img
                       src={user.avatar}
                       alt={user.name}
-                      className="w-12 h-12 rounded-2xl object-cover border border-slate-700 group-hover:border-brand-500/50 transition-colors"
+                      className="w-12 h-12 rounded-lg object-cover border border-border-subtle group-hover:border-teal-primary/50 transition-colors"
                     />
                     <div className="min-w-0">
                       <Link
                         to={`/profile/${user.id}`}
-                        className="text-sm font-bold text-slate-100 hover:text-brand-400 truncate block"
+                        className="text-sm font-bold text-text-primary hover:text-teal-dark truncate block"
                       >
                         {user.name}
                       </Link>
-                      <span className="text-xs text-brand-400 font-medium truncate block">@{user.username}</span>
-                      <span className="text-[11px] text-slate-400">{user.location}</span>
+                      <span className="text-xs text-teal-dark font-medium truncate block">@{user.username}</span>
+                      <span className="text-[11px] text-text-secondary">{user.location}</span>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-300 line-clamp-2 mb-3">
+                  <p className="text-xs text-text-secondary line-clamp-2 mb-3">
                     {user.headline || user.bio}
                   </p>
 
@@ -151,7 +151,7 @@ export const PeoplePage = () => {
                       {user.interests.slice(0, 3).map((item, i) => (
                         <span
                           key={i}
-                          className="px-2 py-0.5 rounded-lg bg-slate-800 text-slate-300 text-[10px] font-mono border border-slate-700/60"
+                          className="px-2 py-0.5 rounded-lg bg-surface text-text-secondary text-[10px] font-mono border border-border-subtle/60"
                         >
                           #{item}
                         </span>
@@ -161,26 +161,26 @@ export const PeoplePage = () => {
                 </div>
 
                 {/* Actions */}
-                <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <div className="pt-3 border-t border-border-subtle flex items-center justify-between">
                   <Link
                     to={`/profile/${user.id}`}
-                    className="text-xs font-semibold text-brand-400 hover:text-brand-300 transition-colors"
+                    className="text-xs font-semibold text-teal-dark hover:text-teal-primary transition-colors"
                   >
                     View Profile →
                   </Link>
 
                   {!isSelf && (
                     isFriend ? (
-                      <span className="text-xs text-emerald-400 font-semibold flex items-center gap-1">
+                      <span className="text-xs text-teal-dark font-semibold flex items-center gap-1">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         Connected
                       </span>
                     ) : (
                       <button
                         onClick={() => handleAddDirect(user.id)}
-                        className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-750 text-slate-200 text-xs font-semibold border border-slate-700 flex items-center gap-1.5 transition-colors"
+                        className="px-3 py-1.5 rounded-xl bg-surface hover:bg-surface-hov text-text-primary text-xs font-semibold border border-border-subtle flex items-center gap-1.5 transition-colors"
                       >
-                        <UserPlus className="w-3.5 h-3.5 text-brand-400" />
+                        <UserPlus className="w-3.5 h-3.5 text-teal-dark" />
                         <span>Connect</span>
                       </button>
                     )

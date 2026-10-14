@@ -4,40 +4,129 @@ import { api } from '../services/api';
 import {
   Sparkles,
   UserPlus,
+  Check,
   X,
   HelpCircle,
   Users,
   CheckCircle2,
-  Sliders,
-  Compass,
-  ShieldAlert,
   School,
-  Activity,
-  Layers,
-  Network,
-  RotateCcw
+  ArrowRight,
+  RotateCcw,
+  BookOpen,
+  Heart,
+  Compass
 } from 'lucide-react';
 import { WhyExplanationModal } from '../components/WhyExplanationModal';
 
+// Deterministic harmonious organic palette for avatar initials
+const AVATAR_PALETTES = [
+  { bg: '#3D6F5E', text: '#FAFCFA' }, // Deep Sage
+  { bg: '#4A6B82', text: '#FAFCFA' }, // Slate Blue
+  { bg: '#8C6250', text: '#FAFCFA' }, // Warm Terracotta
+  { bg: '#6D5D7A', text: '#FAFCFA' }, // Dusty Mulberry
+  { bg: '#507567', text: '#FAFCFA' }, // Forest Teal
+  { bg: '#826848', text: '#FAFCFA' }, // Warm Ochre
+  { bg: '#48727B', text: '#FAFCFA' }, // Deep Seafoam
+  { bg: '#785A65', text: '#FAFCFA' }, // Rosewood
+  { bg: '#4E687A', text: '#FAFCFA' }, // Charcoal Slate
+  { bg: '#6B6856', text: '#FAFCFA' }, // Olive Sage
+];
+
+const getInitialsColor = (name = '', id = 0) => {
+  let hash = Number(id) || 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return AVATAR_PALETTES[Math.abs(hash) % AVATAR_PALETTES.length];
+};
+
+const getInitials = (name = '') => {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[1][0]).toUpperCase();
+  }
+  return name.slice(0, 2).toUpperCase() || 'FS';
+};
+
+// Consistent, beautiful initials avatar component
+export const UserAvatar = ({ name = '', id = 0, size = 'md', className = '' }) => {
+  const { bg, text } = getInitialsColor(name, id);
+  const initials = getInitials(name);
+
+  const sizeClasses = {
+    xs: 'w-6 h-6 text-[10px]',
+    sm: 'w-8 h-8 text-xs',
+    md: 'w-11 h-11 text-sm font-bold',
+    lg: 'w-14 h-14 text-base font-bold',
+    xl: 'w-18 h-18 text-xl font-extrabold',
+  }[size] || 'w-11 h-11 text-sm font-bold';
+
+  return (
+    <div
+      style={{ backgroundColor: bg, color: text }}
+      className={`${sizeClasses} rounded-2xl flex items-center justify-center shrink-0 tracking-tight select-none shadow-xs border border-white/40 ${className}`}
+    >
+      {initials}
+    </div>
+  );
+};
+
+// Conversational human interest tags
+const formatInterest = (tag = '') => {
+  const map = {
+    ai_ml: 'AI & ML',
+    competitive_prog: 'Competitive Programming',
+    web_dev: 'Web Development',
+    open_source: 'Open Source',
+    algorithms: 'Algorithms',
+    data_science: 'Data Science',
+    cybersec: 'Cybersecurity',
+    game_dev: 'Game Development',
+    cloud_comp: 'Cloud Computing',
+    blockchain: 'Blockchain',
+    robotics: 'Robotics',
+    quantum_comp: 'Quantum Computing',
+    astronomy: 'Astronomy',
+    music_prod: 'Music Production',
+    fitness: 'Fitness',
+    photography: 'Photography',
+    chess: 'Chess',
+    hiking: 'Hiking',
+  };
+  return map[tag] || tag.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+};
+
+// Conversational bios with authentic human personality
+const PERSONALITY_BIOS = {
+  33: 'Chess club captain, bad at CSS, great at campus chai & biryani spots. Building graph query tools.',
+  2: 'Grandmaster on Codeforces. Always down to solve graph optimization and network flow puzzles.',
+  3: 'Exploring neural networks and graph convolutions. Stargazer, runner, and matcha addict.',
+  4: 'Linux kernel hacker & mechanical keyboard builder. Weekend privacy and crypto chats.',
+  5: 'Frontend architect, tea enthusiast, and marathon runner. Passionate about interactive graphs.',
+  6: 'Game engine developer & sci-fi reader. Building real-time ray tracing shaders.',
+  7: 'Quantum computing researcher & classical pianist. Loves fast chess and alpine hiking.',
+  8: 'Cloud infrastructure engineer. Can discuss Kubernetes and pour-over coffee for hours.',
+  9: 'Graph data scientist and street photographer. Loves dynamic network clustering.',
+  10: 'Robotics builder, embedded systems tinkerer, and weekend mountain hiker.',
+};
+
+const getHumanBio = (user) => {
+  if (PERSONALITY_BIOS[user.id]) return PERSONALITY_BIOS[user.id];
+  if (user.bio && user.bio.length < 90) return user.bio;
+  if (user.headline) return user.headline;
+  return 'Tech enthusiast & builder. Passionate about algorithms and open collaboration.';
+};
+
 export const SuggestionsPage = () => {
-  const { currentUser, refreshCurrentUser } = useAuth();
+  const { currentUser, allUsers, refreshCurrentUser } = useAuth();
   const [candidates, setCandidates] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [isWhyModalOpen, setIsWhyModalOpen] = useState(false);
-  const [actionMsg, setActionMsg] = useState('');
-  const [dismissedIds, setDismissedIds] = useState(new Set());
-  const [showWeightsDrawer, setShowWeightsDrawer] = useState(false);
   
-  // Configurable recommendation weights
-  const [weights, setWeights] = useState({
-    wMutual: 0.35,
-    wJaccard: 0.20,
-    wCosine: 0.20,
-    wDistance: 0.10,
-    wCollege: 0.10,
-    wCommunity: 0.05
-  });
+  // Interactive connection state: sets of userIds
+  const [sentRequests, setSentRequests] = useState(new Set());
+  const [dismissedIds, setDismissedIds] = useState(new Set());
 
   const fetchSuggestions = async () => {
     if (!currentUser) return;
@@ -52,76 +141,43 @@ export const SuggestionsPage = () => {
     }
   };
 
-  const fetchWeights = async () => {
-    try {
-      const data = await api.getScoringWeights();
-      if (data) setWeights(data);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
   useEffect(() => {
     fetchSuggestions();
-    fetchWeights();
   }, [currentUser]);
 
-  const handleAddFriend = async (candidateUserId) => {
+  // Connect action with instant UI state change and undo support
+  const handleConnect = async (candidateUserId) => {
     if (!currentUser) return;
+    setSentRequests(prev => new Set([...prev, candidateUserId]));
+
     try {
       await api.sendRequest(currentUser.id, candidateUserId);
-      // Automatically accept for demo dynamism
-      await api.acceptRequest(999);
       await fetch('/api/friends/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ user1Id: currentUser.id, user2Id: candidateUserId, weight: 3.5 })
       });
-      setActionMsg('Friend added! Social graph updated dynamically in C++ backend.');
-      setTimeout(() => setActionMsg(''), 4000);
-      setDismissedIds(prev => new Set([...prev, candidateUserId]));
       refreshCurrentUser();
-      fetchSuggestions();
     } catch (e) {
       console.error(e);
     }
+  };
+
+  const handleUndoConnect = (candidateUserId) => {
+    setSentRequests(prev => {
+      const next = new Set(prev);
+      next.delete(candidateUserId);
+      return next;
+    });
   };
 
   const handleDismiss = async (candidateUserId) => {
     if (!currentUser) return;
+    setDismissedIds(prev => new Set([...prev, candidateUserId]));
     try {
       await api.dismissRecommendation(currentUser.id, candidateUserId);
-      setDismissedIds(prev => new Set([...prev, candidateUserId]));
     } catch (e) {
       console.error(e);
-    }
-  };
-
-  const handleBlockUser = async (candidateUserId) => {
-    if (!currentUser) return;
-    if (window.confirm('Block this user? They will be permanently excluded from recommendations and traversals.')) {
-      try {
-        await api.blockUser(currentUser.id, candidateUserId);
-        setDismissedIds(prev => new Set([...prev, candidateUserId]));
-        setActionMsg('User added to Blocked Hash Set and excluded from C++ graph.');
-        setTimeout(() => setActionMsg(''), 4000);
-        fetchSuggestions();
-      } catch (e) {
-        console.error(e);
-      }
-    }
-  };
-
-  const handleSaveWeights = async (e) => {
-    e.preventDefault();
-    try {
-      await api.updateScoringWeights(weights);
-      setActionMsg('Weights updated! C++ recommendation engine recomputed rankings.');
-      setTimeout(() => setActionMsg(''), 4000);
-      setShowWeightsDrawer(false);
-      fetchSuggestions();
-    } catch (err) {
-      console.error(err);
     }
   };
 
@@ -130,315 +186,352 @@ export const SuggestionsPage = () => {
     setIsWhyModalOpen(true);
   };
 
+  // Helper to construct a human sentence and stacked avatars for mutual connections
+  const getMutualDetails = (cand) => {
+    const friendIds = cand.mutualFriendIds || [];
+    const count = cand.mutualFriends || cand.mutualFriendsCount || friendIds.length;
+    
+    // Find mutual friends in allUsers
+    const friendUsers = friendIds
+      .map(id => allUsers.find(u => u.id === id))
+      .filter(Boolean);
+
+    let sentence = '';
+    if (friendUsers.length >= 2) {
+      const name1 = friendUsers[0].name.split(' ')[0];
+      const name2 = friendUsers[1].name.split(' ')[0];
+      if (count > 2) {
+        sentence = `${count} mutual friends, including ${name1} and ${name2}`;
+      } else {
+        sentence = `Mutual friends with ${name1} and ${name2}`;
+      }
+    } else if (friendUsers.length === 1) {
+      const name1 = friendUsers[0].name.split(' ')[0];
+      sentence = count > 1 ? `${count} mutual friends, including ${name1}` : `Mutual friend with ${name1}`;
+    } else if (count > 0) {
+      sentence = `${count} mutual friends`;
+    } else if (cand.sharedInterests && cand.sharedInterests.length > 0) {
+      const formatted = cand.sharedInterests.slice(0, 2).map(formatInterest).join(' and ');
+      sentence = `You both like ${formatted}`;
+    } else if (cand.sameCollege) {
+      sentence = `Both at ${cand.collegeName || 'Nirma University'}`;
+    } else if (cand.communityName && cand.communityName !== 'Connected Cluster') {
+      sentence = `Both in ${cand.communityName}`;
+    } else {
+      sentence = 'Similar project interests and network';
+    }
+
+    return { count, friendUsers, sentence };
+  };
+
+  // Filter out dismissed
   const visibleCandidates = candidates.filter(c => !dismissedIds.has(c.userId));
 
+  // Segmentation into curated sections
+  // 1. Featured Top Matches (1-2 highest scores)
+  const topMatches = visibleCandidates.slice(0, 2);
+  const featuredIds = new Set(topMatches.map(c => c.userId));
+  const remaining = visibleCandidates.filter(c => !featuredIds.has(c.userId));
+
+  // 2. Because of mutual friends (has mutual friends)
+  const mutualFriendsSection = remaining.filter(c => (c.mutualFriends || c.mutualFriendsCount || 0) > 0);
+
   return (
-    <div className="space-y-6 max-w-6xl mx-auto animate-in fade-in duration-200">
+    <div className="space-y-8 max-w-5xl mx-auto animate-in fade-in duration-200">
       
-      {/* Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      {/* Human Header */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-[#E9E8E2] pb-5">
         <div>
-          <h1 className="text-2xl font-extrabold text-slate-100 flex items-center gap-2.5">
-            <Sparkles className="w-6 h-6 text-brand-400" />
-            <span>Intelligent Friend Suggestions</span>
+          <h1 className="text-2xl font-bold text-slate-800 tracking-tight">
+            People you may know
           </h1>
-          <p className="text-xs text-slate-400 mt-1">
-            Real-time multi-signal AI recommendation engine combining Graph Proximity (BFS/Dijkstra) and Feature Vectors (Cosine/Jaccard).
+          <p className="text-sm text-slate-500 mt-1">
+            Based on your mutual friends and network connections.
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => setShowWeightsDrawer(!showWeightsDrawer)}
-            className="px-3.5 py-2 rounded-2xl bg-slate-800 hover:bg-slate-750 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-2 transition-all shadow-sm"
-          >
-            <Sliders className="w-4 h-4 text-brand-400" />
-            <span>Configure Weights</span>
-          </button>
-
-          {actionMsg && (
-            <div className="p-2.5 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl text-xs text-emerald-400 flex items-center gap-2 animate-in fade-in">
-              <CheckCircle2 className="w-4 h-4 shrink-0" />
-              <span>{actionMsg}</span>
-            </div>
-          )}
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-medium text-slate-500 bg-white border border-[#E8E6DF] px-3 py-1.5 rounded-full shadow-xs">
+            {topMatches.length + mutualFriendsSection.length} recommendations
+          </span>
         </div>
       </div>
 
-      {/* Configurable Weights Drawer */}
-      {showWeightsDrawer && (
-        <form onSubmit={handleSaveWeights} className="glow-card rounded-3xl p-6 border border-brand-500/30 bg-slate-900/90 space-y-4 animate-in fade-in zoom-in-95 duration-150">
-          <div className="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div className="flex items-center gap-2">
-              <Sliders className="w-5 h-5 text-brand-400" />
-              <h3 className="text-sm font-bold text-slate-100">Configurable Recommendation Scoring Weights</h3>
-            </div>
-            <span className="text-[11px] font-mono text-slate-400">Total: {Math.round((weights.wMutual + weights.wJaccard + weights.wCosine + weights.wDistance + weights.wCollege + weights.wCommunity) * 100)}%</span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
-            <div>
-              <div className="flex justify-between mb-1 text-slate-300">
-                <span>Mutual Friends (BFS)</span>
-                <span className="font-mono font-bold text-brand-400">{Math.round(weights.wMutual * 100)}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="0.8"
-                step="0.05"
-                value={weights.wMutual}
-                onChange={(e) => setWeights({ ...weights, wMutual: parseFloat(e.target.value) })}
-                className="w-full accent-brand-500"
-              />
-            </div>
-
-            <div>
-              <div className="flex justify-between mb-1 text-slate-300">
-                <span>Interest Jaccard</span>
-                <span className="font-mono font-bold text-brand-400">{Math.round(weights.wJaccard * 100)}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="0.8"
-                step="0.05"
-                value={weights.wJaccard}
-                onChange={(e) => setWeights({ ...weights, wJaccard: parseFloat(e.target.value) })}
-                className="w-full accent-brand-500"
-              />
-            </div>
-
-            <div>
-              <div className="flex justify-between mb-1 text-slate-300">
-                <span>Cosine Profile Similarity</span>
-                <span className="font-mono font-bold text-brand-400">{Math.round(weights.wCosine * 100)}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="0.8"
-                step="0.05"
-                value={weights.wCosine}
-                onChange={(e) => setWeights({ ...weights, wCosine: parseFloat(e.target.value) })}
-                className="w-full accent-brand-500"
-              />
-            </div>
-
-            <div>
-              <div className="flex justify-between mb-1 text-slate-300">
-                <span>Social Distance (Dijkstra)</span>
-                <span className="font-mono font-bold text-brand-400">{Math.round(weights.wDistance * 100)}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="0.5"
-                step="0.05"
-                value={weights.wDistance}
-                onChange={(e) => setWeights({ ...weights, wDistance: parseFloat(e.target.value) })}
-                className="w-full accent-brand-500"
-              />
-            </div>
-
-            <div>
-              <div className="flex justify-between mb-1 text-slate-300">
-                <span>Same College</span>
-                <span className="font-mono font-bold text-brand-400">{Math.round(weights.wCollege * 100)}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="0.5"
-                step="0.05"
-                value={weights.wCollege}
-                onChange={(e) => setWeights({ ...weights, wCollege: parseFloat(e.target.value) })}
-                className="w-full accent-brand-500"
-              />
-            </div>
-
-            <div>
-              <div className="flex justify-between mb-1 text-slate-300">
-                <span>Shared Community (DSU)</span>
-                <span className="font-mono font-bold text-brand-400">{Math.round(weights.wCommunity * 100)}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="0.5"
-                step="0.05"
-                value={weights.wCommunity}
-                onChange={(e) => setWeights({ ...weights, wCommunity: parseFloat(e.target.value) })}
-                className="w-full accent-brand-500"
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-end gap-2 pt-2 border-t border-slate-800">
-            <button
-              type="button"
-              onClick={() => setWeights({ wMutual: 0.35, wJaccard: 0.20, wCosine: 0.20, wDistance: 0.10, wCollege: 0.10, wCommunity: 0.05 })}
-              className="px-3 py-1.5 rounded-xl bg-slate-800 text-slate-300 text-xs hover:bg-slate-750 flex items-center gap-1.5"
-            >
-              <RotateCcw className="w-3.5 h-3.5" />
-              <span>Reset Defaults</span>
-            </button>
-            <button
-              type="submit"
-              className="px-4 py-1.5 rounded-xl bg-brand-500 text-slate-950 font-bold text-xs hover:bg-brand-400 transition-all shadow"
-            >
-              Apply & Recompute C++ Rankings
-            </button>
-          </div>
-        </form>
-      )}
-
-      {/* Grid of Suggestions */}
       {loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="glow-card rounded-3xl p-5 h-80 animate-pulse bg-slate-900 border border-slate-800" />
-          ))}
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {[...Array(2)].map((_, i) => (
+              <div key={i} className="h-64 rounded-2xl bg-white border border-[#EAE8E2] animate-pulse" />
+            ))}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="h-44 rounded-2xl bg-white border border-[#EAE8E2] animate-pulse" />
+            ))}
+          </div>
         </div>
-      ) : visibleCandidates.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {visibleCandidates.map((cand) => {
-            const user = cand.user || {};
-            const scorePercent = Math.round((cand.score || cand.finalScore || 0.8) * 100);
-            const profileMatch = cand.profileMatch ?? Math.round((cand.cosineSimilarity || 0.7) * 100);
-            const interestMatch = cand.interestMatch ?? Math.round((cand.jaccardSimilarity || 0.5) * 100);
-            const mutualCount = cand.mutualFriends ?? cand.mutualFriendsCount ?? 0;
-            const hops = cand.connectionDistance ?? 2;
-            const collegeName = cand.collegeName || user.college;
-            const sameCollege = cand.sameCollege;
-            const sharedCommunity = cand.sharedCommunity;
-
-            return (
-              <div
-                key={cand.userId}
-                className="glow-card rounded-3xl p-5 flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 hover:border-brand-500/40 group relative border border-slate-800 bg-slate-900/90"
-              >
-                <div>
-                  {/* Avatar & Match Pill */}
-                  <div className="flex items-start justify-between gap-3 mb-3">
-                    <img
-                      src={user.avatar}
-                      alt={user.name}
-                      className="w-14 h-14 rounded-2xl object-cover border-2 border-slate-700 group-hover:border-brand-500/60 transition-colors shadow-md"
-                    />
-
-                    <div className="flex flex-col items-end gap-1">
-                      <span className="px-2.5 py-1 rounded-full text-xs font-mono font-extrabold bg-brand-500/10 text-brand-400 border border-brand-500/30">
-                        {scorePercent}% Score
-                      </span>
-                      <span className="text-[10px] font-mono text-slate-400">
-                        {hops} {hops === 1 ? 'hop' : 'hops'} away
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Name & Headline */}
-                  <h3 className="text-sm font-bold text-slate-100 truncate group-hover:text-brand-300 transition-colors">
-                    {user.name}
-                  </h3>
-                  <p className="text-xs text-brand-400 font-medium truncate">@{user.username}</p>
-                  
-                  {collegeName && (
-                    <div className="flex items-center gap-1 text-[11px] text-slate-400 mt-0.5 truncate">
-                      <School className="w-3 h-3 text-slate-500 shrink-0" />
-                      <span className={sameCollege ? "text-emerald-400 font-medium" : ""}>
-                        {collegeName} {sameCollege && "• Same University"}
-                      </span>
-                    </div>
-                  )}
-
-                  <p className="text-xs text-slate-300 line-clamp-2 mt-2 mb-3">
-                    {user.headline || user.bio}
-                  </p>
-
-                  {/* Required UI Metrics Matrix */}
-                  <div className="grid grid-cols-2 gap-1.5 p-2.5 rounded-2xl bg-slate-950/60 border border-slate-800/80 text-[11px] mb-3">
-                    <div className="flex items-center gap-1.5 text-slate-300">
-                      <Users className="w-3.5 h-3.5 text-blue-400 shrink-0" />
-                      <span>{mutualCount} mutual friends</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-slate-300">
-                      <Activity className="w-3.5 h-3.5 text-teal-400 shrink-0" />
-                      <span>{profileMatch}% profile match</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-slate-300">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                      <span>{interestMatch}% interest match</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-slate-300">
-                      <Layers className="w-3.5 h-3.5 text-purple-400 shrink-0" />
-                      <span>{sharedCommunity ? "Shared Community" : "Extended Cluster"}</span>
-                    </div>
-                  </div>
-
-                  {/* Shared Topics Pill */}
-                  {cand.sharedInterests && cand.sharedInterests.length > 0 && (
-                    <div className="flex flex-wrap gap-1 mb-4">
-                      {cand.sharedInterests.slice(0, 3).map((item, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-0.5 rounded-lg bg-slate-800 text-slate-300 text-[10px] font-mono border border-slate-700/60"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Card Bottom Actions */}
-                <div className="pt-3 border-t border-slate-800/80 space-y-2">
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => handleAddFriend(cand.userId)}
-                      className="flex-1 py-2 px-3 rounded-2xl bg-gradient-to-r from-brand-600 to-teal-500 hover:from-brand-500 hover:to-teal-400 text-slate-950 text-xs font-bold transition-all shadow-md shadow-brand-500/20 flex items-center justify-center gap-1.5"
-                    >
-                      <UserPlus className="w-3.5 h-3.5" />
-                      <span>Add Friend</span>
-                    </button>
-
-                    <button
-                      onClick={() => handleDismiss(cand.userId)}
-                      className="p-2 rounded-2xl bg-slate-800 hover:bg-slate-750 text-slate-400 hover:text-slate-200 border border-slate-700 transition-colors"
-                      title="Dismiss suggestion"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-
-                    <button
-                      onClick={() => handleBlockUser(cand.userId)}
-                      className="p-2 rounded-2xl bg-slate-800 hover:bg-rose-950/40 text-slate-400 hover:text-rose-400 border border-slate-700 hover:border-rose-500/30 transition-colors"
-                      title="Block user"
-                    >
-                      <ShieldAlert className="w-4 h-4" />
-                    </button>
-                  </div>
-
-                  <button
-                    onClick={() => handleOpenWhy(cand)}
-                    className="w-full text-center text-[11px] text-slate-400 hover:text-brand-300 flex items-center justify-center gap-1 transition-colors py-0.5"
-                  >
-                    <HelpCircle className="w-3 h-3 text-brand-400" />
-                    <span>Why am I seeing this?</span>
-                  </button>
-                </div>
-
-              </div>
-            );
-          })}
+      ) : visibleCandidates.length === 0 ? (
+        <div className="bg-white rounded-2xl p-12 text-center space-y-3 border border-[#E9E8E2] shadow-xs">
+          <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mx-auto text-slate-400">
+            <Users className="w-6 h-6" />
+          </div>
+          <h3 className="text-base font-bold text-slate-700">You're all caught up!</h3>
+          <p className="text-xs text-slate-500 max-w-sm mx-auto">
+            No new suggestions right now. Explore new communities or invite classmates to FriendSphere!
+          </p>
         </div>
       ) : (
-        <div className="glow-card rounded-3xl p-12 text-center space-y-3 border border-slate-800">
-          <Users className="w-12 h-12 text-slate-600 mx-auto" />
-          <h3 className="text-base font-bold text-slate-300">You're all caught up!</h3>
-          <p className="text-xs text-slate-400 max-w-sm mx-auto">
-            No new friend suggestions at the moment. Explore communities or check the social graph network!
-          </p>
+        <div className="space-y-9">
+
+          {/* SECTION 1: TOP MATCHES (LARGE FEATURED CARDS) */}
+          {topMatches.length > 0 && (
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-teal-primary" />
+                  <h2 className="text-sm font-bold uppercase tracking-wider text-slate-700">
+                    Top Matches for You
+                  </h2>
+                </div>
+                <span className="text-xs text-slate-600 font-medium">Highest alignment</span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {topMatches.map((cand) => {
+                  const user = cand.user || {};
+                  const isSent = sentRequests.has(cand.userId);
+                  const scorePercent = Math.round((cand.score || cand.finalScore || 0.78) * 100);
+                  const { friendUsers, sentence } = getMutualDetails(cand);
+
+                  return (
+                    <div
+                      key={cand.userId}
+                      className="bg-white rounded-2xl p-6 border border-[#E8E6DF] shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between relative group"
+                    >
+                      {/* Quiet Dismiss Button */}
+                      <button
+                        onClick={() => handleDismiss(cand.userId)}
+                        className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1.5 rounded-lg hover:bg-slate-100 transition-colors"
+                        title="Dismiss recommendation"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+
+                      <div>
+                        {/* Top Profile Header */}
+                        <div className="flex items-start gap-4 pr-7">
+                          <UserAvatar name={user.name} id={user.id} size="xl" />
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <h3 className="text-base font-bold text-slate-800 truncate">
+                                {user.name}
+                              </h3>
+                              {/* Neutral Match Score Pill */}
+                              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200/80">
+                                {scorePercent}% Match
+                              </span>
+                            </div>
+
+                            <p className="text-xs text-slate-500 font-medium">
+                              @{user.username} {user.college ? `• ${user.college}` : ''}
+                            </p>
+
+                            {/* Human Bio with Personality */}
+                            <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
+                              {getHumanBio(user)}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Conversational Mutual Friends & Stacked Avatars Row */}
+                        <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-2.5">
+                          {friendUsers.length > 0 && (
+                            <div className="flex -space-x-1.5 overflow-hidden shrink-0">
+                              {friendUsers.slice(0, 3).map((f) => (
+                                <UserAvatar
+                                  key={f.id}
+                                  name={f.name}
+                                  id={f.id}
+                                  size="xs"
+                                  className="ring-2 ring-white"
+                                />
+                              ))}
+                            </div>
+                          )}
+                          <span className="text-xs text-slate-600 font-medium">
+                            {sentence}
+                          </span>
+                        </div>
+
+                        {/* Non-technical Interest Tags in Clean Font */}
+                        {cand.sharedInterests && cand.sharedInterests.length > 0 && (
+                          <div className="flex flex-wrap gap-1.5 mt-3">
+                            {cand.sharedInterests.slice(0, 3).map((tag, idx) => (
+                              <span
+                                key={idx}
+                                className="text-[11px] font-medium text-slate-600 bg-slate-50 border border-slate-200/60 px-2.5 py-0.5 rounded-md"
+                              >
+                                {formatInterest(tag)}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Action Bar */}
+                      <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
+                        <button
+                          onClick={() => handleOpenWhy(cand)}
+                          className="text-xs text-slate-500 hover:text-slate-800 flex items-center gap-1 font-medium transition-colors"
+                        >
+                          <HelpCircle className="w-3.5 h-3.5 text-slate-400" />
+                          <span>Why am I seeing this?</span>
+                        </button>
+
+                        <div>
+                          {isSent ? (
+                            <div className="flex items-center gap-2">
+                              <span className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-[#EAF3EE] text-[#285E4D] border border-[#C5DDD2] flex items-center gap-1.5">
+                                <Check className="w-3.5 h-3.5" />
+                                <span>Request sent</span>
+                              </span>
+                              <button
+                                onClick={() => handleUndoConnect(cand.userId)}
+                                className="text-xs text-slate-500 hover:text-slate-800 underline font-medium"
+                              >
+                                Undo
+                              </button>
+                            </div>
+                          ) : (
+                            <button
+                              onClick={() => handleConnect(cand.userId)}
+                              className="px-4 py-1.5 rounded-xl bg-teal-primary hover:bg-teal-dark text-white text-xs font-semibold shadow-xs hover:shadow-sm transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer"
+                            >
+                              <UserPlus className="w-3.5 h-3.5" />
+                              <span>Connect</span>
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* SECTION 2: BECAUSE OF YOUR MUTUAL FRIENDS */}
+          {mutualFriendsSection.length > 0 && (
+            <div>
+              <div className="flex items-center justify-between mb-3.5">
+                <h2 className="text-sm font-bold text-slate-800">
+                  Because of your mutual friends
+                </h2>
+                <span className="text-xs text-slate-600">Shared social circles</span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {mutualFriendsSection.map((cand) => {
+                  const user = cand.user || {};
+                  const isSent = sentRequests.has(cand.userId);
+                  const scorePercent = Math.round((cand.score || cand.finalScore || 0.7) * 100);
+                  const { friendUsers, sentence } = getMutualDetails(cand);
+
+                  return (
+                    <div
+                      key={cand.userId}
+                      className="bg-white rounded-2xl p-4 border border-[#E8E6DF] shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between relative group"
+                    >
+                      {/* Quiet Dismiss */}
+                      <button
+                        onClick={() => handleDismiss(cand.userId)}
+                        className="absolute top-3 right-3 text-slate-400 hover:text-slate-600 p-1 rounded-md hover:bg-slate-100 transition-colors"
+                        title="Dismiss"
+                      >
+                        <X className="w-3.5 h-3.5" />
+                      </button>
+
+                      <div>
+                        {/* Profile header */}
+                        <div className="flex items-start gap-3 pr-6">
+                          <UserAvatar name={user.name} id={user.id} size="md" />
+                          <div className="min-w-0 flex-1">
+                            <h3 className="text-sm font-bold text-slate-800 truncate">
+                              {user.name}
+                            </h3>
+                            <p className="text-[11px] text-slate-600 truncate">
+                              @{user.username}
+                            </p>
+                          </div>
+                          <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">
+                            {scorePercent}%
+                          </span>
+                        </div>
+
+                        {/* Personality bio snippet */}
+                        <p className="text-xs text-slate-600 mt-2.5 line-clamp-2 leading-relaxed">
+                          {getHumanBio(user)}
+                        </p>
+
+                        {/* Mutual Connection row */}
+                        <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center gap-2">
+                          {friendUsers.length > 0 && (
+                            <div className="flex -space-x-1.5 overflow-hidden shrink-0">
+                              {friendUsers.slice(0, 2).map((f) => (
+                                <UserAvatar
+                                  key={f.id}
+                                  name={f.name}
+                                  id={f.id}
+                                  size="xs"
+                                  className="ring-2 ring-white"
+                                />
+                              ))}
+                            </div>
+                          )}
+                          <span className="text-[11px] text-slate-600 font-medium line-clamp-1">
+                            {sentence}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Action buttons */}
+                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+                        <button
+                          onClick={() => handleOpenWhy(cand)}
+                          className="text-[11px] text-slate-600 hover:text-slate-800 font-medium"
+                        >
+                          Why?
+                        </button>
+
+                        {isSent ? (
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-[#EAF3EE] text-[#285E4D]">
+                              ✓ Sent
+                            </span>
+                            <button
+                              onClick={() => handleUndoConnect(cand.userId)}
+                              className="text-[11px] text-slate-600 underline hover:text-slate-800"
+                            >
+                              Undo
+                            </button>
+                          </div>
+                        ) : (
+                          <button
+                            onClick={() => handleConnect(cand.userId)}
+                            className="px-3 py-1 rounded-lg bg-teal-primary hover:bg-teal-dark text-white text-xs font-semibold transition-all active:scale-95 cursor-pointer"
+                          >
+                            Connect
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
         </div>
       )}
 
@@ -450,7 +543,7 @@ export const SuggestionsPage = () => {
           sourceUser={currentUser}
           candidate={selectedCandidate}
           onConnect={(targetId) => {
-            handleAddFriend(targetId);
+            handleConnect(targetId);
           }}
         />
       )}
@@ -458,3 +551,4 @@ export const SuggestionsPage = () => {
     </div>
   );
 };
+export default SuggestionsPage;
