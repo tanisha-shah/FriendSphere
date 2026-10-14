@@ -13,15 +13,7 @@
       7,
       9,
       12,
-      19,
-      21,
-      26,
-      29,
-      33,
-      35,
-      36,
-      41,
-      42
+      19
     ],
     "primaryInterests": [
       "algorithms",
@@ -41,12 +33,9 @@
       3,
       9,
       10,
+      14,
       17,
-      24,
-      29,
-      37,
-      39,
-      42
+      20
     ],
     "primaryInterests": [
       "ai_ml",
@@ -58,95 +47,82 @@
     "id": "c3",
     "name": "Systems, CyberSec & Cryptography",
     "description": "Zero knowledge proofs, distributed consensus, Linux kernel internals, and high security infrastructure.",
-    "category": "Security & Systems",
-    "avatar": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&auto=format&fit=crop&q=80",
-    "banner": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
+    "category": "Systems & Security",
+    "avatar": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&auto=format&fit=crop&q=80",
     "memberIds": [
+      1,
       4,
       8,
-      14,
-      20,
-      23,
-      26,
-      30,
-      35
+      12,
+      13,
+      15
     ],
     "primaryInterests": [
-      "cybersec",
-      "blockchain",
-      "cloud_comp"
+      "cybersecurity",
+      "systems",
+      "cloud"
     ]
   },
   {
     "id": "c4",
-    "name": "Creative Tech, Shaders & Game Dev",
-    "description": "Vulkan rendering, procedural graphics, audio DSP synthesis, and real-time interactive experiences.",
-    "category": "Creative & Gaming",
-    "avatar": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&auto=format&fit=crop&q=80",
-    "banner": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=80",
+    "name": "Frontend Craft, WebGL & Canvas",
+    "description": "Building responsive, buttery-smooth interactive user experiences, WebGL 3D physics, and reactive design systems.",
+    "category": "Web Engineering",
+    "avatar": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=400&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
     "memberIds": [
+      1,
       5,
       6,
-      10,
-      15,
-      22,
-      25,
-      34,
-      40,
-      41
+      11,
+      16,
+      18
     ],
     "primaryInterests": [
-      "game_dev",
       "web_dev",
-      "music_prod",
-      "photography"
+      "ui_ux",
+      "open_source"
     ]
   },
   {
     "id": "c5",
-    "name": "Quantum Horizons & Astrophysics",
-    "description": "Quantum computing circuits, N-body astrophysics simulations, and deep space exploration technologies.",
-    "category": "Science & Physics",
-    "avatar": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&auto=format&fit=crop&q=80",
-    "banner": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=800&auto=format&fit=crop&q=80",
+    "name": "Open Source Builders & DevRel",
+    "description": "Collaborative software engineering, maintaining public toolkits, pull request reviews, and community hacking.",
+    "category": "Open Source",
+    "avatar": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=80",
     "memberIds": [
-      3,
-      7,
+      1,
+      4,
+      5,
+      8,
       13,
-      32,
-      36,
-      42
+      18
     ],
     "primaryInterests": [
-      "quantum_comp",
-      "astronomy",
+      "open_source",
+      "web_dev",
       "algorithms"
     ]
   },
   {
     "id": "c6",
-    "name": "Outdoor Expeditions & Wellness",
-    "description": "Trail trekking, mountain photography, endurance sports, and outdoor gear tech.",
-    "category": "Lifestyle & Outdoors",
-    "avatar": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&auto=format&fit=crop&q=80",
-    "banner": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "name": "Robotics, Embedded & Autonomous Tech",
+    "description": "ROS2 navigation, SLAM algorithms, drone autonomy, sensors fusion, and hardware accelerated perception.",
+    "category": "Hardware & Robotics",
+    "avatar": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&auto=format&fit=crop&q=80",
+    "banner": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
     "memberIds": [
-      5,
-      8,
+      3,
+      6,
       10,
-      13,
-      18,
-      20,
-      22,
-      28,
-      32,
-      38,
-      40
+      17
     ],
     "primaryInterests": [
-      "hiking",
-      "fitness",
-      "photography"
+      "robotics",
+      "ai_ml",
+      "systems"
     ]
   }
 ]

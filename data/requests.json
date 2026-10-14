@@ -3,14 +3,14 @@
     "createdAt": "2025-05-11T12:00:00Z",
     "fromUserId": 4,
     "id": 1,
-    "status": "accepted",
+    "status": "pending",
     "toUserId": 1
   },
   {
     "createdAt": "2025-05-11T13:30:00Z",
     "fromUserId": 6,
     "id": 2,
-    "status": "accepted",
+    "status": "pending",
     "toUserId": 1
   },
   {
@@ -29,37 +29,9 @@
   },
   {
     "createdAt": "2025-05-11T16:20:00Z",
-    "fromUserId": 28,
+    "fromUserId": 8,
     "id": 5,
     "status": "pending",
     "toUserId": 5
-  },
-  {
-    "createdAt": "Just now",
-    "fromUserId": 1,
-    "id": 6,
-    "status": "pending",
-    "toUserId": 24
-  },
-  {
-    "createdAt": "Just now",
-    "fromUserId": 1,
-    "id": 7,
-    "status": "pending",
-    "toUserId": 42
-  },
-  {
-    "createdAt": "Just now",
-    "fromUserId": 1,
-    "id": 8,
-    "status": "pending",
-    "toUserId": 33
-  },
-  {
-    "createdAt": "Just now",
-    "fromUserId": 1,
-    "id": 9,
-    "status": "pending",
-    "toUserId": 17
   }
 ]

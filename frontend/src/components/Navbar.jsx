@@ -231,7 +231,7 @@ export const Navbar = () => {
                           <span>Aravind Kumar</span>
                           <span className="text-[10px] text-surface0">2m</span>
                         </div>
-                        <p className="text-xs text-text-secondary truncate">Hey Khushi! Did you check the new shortest path benchmark?</p>
+                        <p className="text-xs text-text-secondary truncate">Hey Tanisha! Did you check the new shortest path benchmark?</p>
                       </div>
                     </div>
                   </div>

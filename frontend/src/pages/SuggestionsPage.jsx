@@ -98,7 +98,6 @@ const formatInterest = (tag = '') => {
 
 // Conversational bios with authentic human personality
 const PERSONALITY_BIOS = {
-  33: 'Chess club captain, bad at CSS, great at campus chai & biryani spots. Building graph query tools.',
   2: 'Grandmaster on Codeforces. Always down to solve graph optimization and network flow puzzles.',
   3: 'Exploring neural networks and graph convolutions. Stargazer, runner, and matcha addict.',
   4: 'Linux kernel hacker & mechanical keyboard builder. Weekend privacy and crypto chats.',
@@ -108,6 +107,16 @@ const PERSONALITY_BIOS = {
   8: 'Cloud infrastructure engineer. Can discuss Kubernetes and pour-over coffee for hours.',
   9: 'Graph data scientist and street photographer. Loves dynamic network clustering.',
   10: 'Robotics builder, embedded systems tinkerer, and weekend mountain hiker.',
+  11: 'Building fluid mobile apps with offline-first sync engines and delightful reactive animations.',
+  12: 'Obsessed with LSM-trees, B+ tree concurrency, disk caching, and write-ahead logs.',
+  13: 'Building resilient microservices, high-throughput gRPC pipelines, and raft consensus clusters.',
+  14: 'Working on prompt distillation, speculative decoding, and multimodal graph attention.',
+  15: 'Studying post-quantum lattice cryptography, side-channel attacks, and network packet analysis.',
+  16: 'Designing accessible human-centered interfaces, interaction design systems, and delightful UX.',
+  17: 'Real-time edge neural inference on embedded GPUs, optical flow, and 3D spatial mapping.',
+  18: 'Creating lightning fast web apps with Next.js, Node, and edge computing. Active OSS maintainer.',
+  19: 'Statistical arbitrage, algorithmic game theory, stochastic calculus, and order book simulations.',
+  20: 'Graph theoretical models of protein interaction networks, phylogenetic tree construction.'
 };
 
 const getHumanBio = (user) => {

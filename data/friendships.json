@@ -718,17 +718,5 @@
     "user1Id": 1,
     "user2Id": 6,
     "weight": 3.0
-  },
-  {
-    "createdAt": "",
-    "user1Id": 1,
-    "user2Id": 33,
-    "weight": 3.5
-  },
-  {
-    "createdAt": "",
-    "user1Id": 1,
-    "user2Id": 17,
-    "weight": 3.5
   }
 ]
